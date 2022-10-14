@@ -1,2 +1,3 @@
 <?php
 info();
+Hello world!
