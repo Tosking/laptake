@@ -1,30 +1,44 @@
+:root{
+    /* Переменные, хранящие цвета сайта*/
+    --colorHead:#D9D9D9;  /* Цвет header'a*/
+    --colorBack:#AEAEAE; /*Цвет фона*/
+    --colorHeadInner:#000000;  /*Цвет текста(ссылок)*/
+}
 body{
     margin: 0;
-    font-family: 'Montserrat',sans-serif;
-   
+    font-family: 'Montserrat',sans-serif; /*В данной строке прописывается шрифт, который будет использоваться на всей странице*/
 }
+/*Navigation*/
 .navbar{
-    border: 2px solid black;
-    background: #4c4c4c;
-background: -moz-linear-gradient(-45deg,  #4c4c4c 0%, #595959 12%, #666666 25%, #474747 39%, #1c1c1c 91%, #131313 100%);
-background: -webkit-linear-gradient(-45deg,  #4c4c4c 0%,#595959 12%,#666666 25%,#474747 39%,#1c1c1c 91%,#131313 100%);
-background: linear-gradient(135deg,  #4c4c4c 0%,#595959 12%,#666666 25%,#474747 39%,#1c1c1c 91%,#131313 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', endColorstr='#131313',GradientType=1 );
-
+    height:144px; /**/
+    box-sizing: border-box;
+    font-size: 20px;
+    border-bottom: 2px solid black;
+    background-color:var(--colorHead);
+    padding-bottom: 14px;
 }
+.nav-link{
+    font-weight: 400;
+    font-style: normal;
+}
+.navbar-brand{
+   margin:0 0 0 0;
+}
+.lk-and-trash{
+    margin-left: 10px;
+}
+
+a {
+    color: var(--colorHeadInner) !important;
+    text-decoration: none;
+
+  }
 .nav-item{
-    margin-left:15px;
+    margin-left:5px;
 }
-
+/*Content(позже добавлю)*/
 .content{
-
-    width:1920px;
-    height: 819px;
-    background: #4c4c4c;
-    background: -moz-linear-gradient(-45deg,  #4c4c4c 0%, #595959 12%, #666666 25%, #474747 39%, #1c1c1c 91%, #131313 100%);
-    background: -webkit-linear-gradient(-45deg,  #4c4c4c 0%,#595959 12%,#666666 25%,#474747 39%,#1c1c1c 91%,#131313 100%);
-    background: linear-gradient(135deg,  #4c4c4c 0%,#595959 12%,#666666 25%,#474747 39%,#1c1c1c 91%,#131313 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', endColorstr='#131313',GradientType=1 );
-    
-
+    background-size: contain;
+    background: var(--colorBack);
 }
+
