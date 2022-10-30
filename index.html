@@ -13,14 +13,15 @@
 
 </head>
 <body>
-  <header id="header" class="fixed-top"> <!--Это нужно для того чтобы наш навбар был фиксированным и не сворачивался на странице-->
+  
+ <!--Это нужно для того чтобы наш навбар был фиксированным и не сворачивался на странице-->
   <nav class="navbar navbar-expand-lg"> <!--Создаем сам навбар-->
     <div class="container"> <!--Создаем контейнер с нужными нам отступами-->
       <a class="navbar-brand" href="#"><img src="/assets/photo/logo.svg" alt="#"></a> <!--Затем используем специальный класс для логотипов компаний или организаций-->
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>  <!--Дефолтная иконка бургера-->
       </button> <!--Все что описано в button и сам button - это создание бургера(бургер это кнопка которая создает выпадающий список)-->
-      <div class="collapse navbar-collapse" id="navbarNavDropdown"> <!--Класс, в котором у нас будут располагаться элементы навбара в самом 
+      <div class="collapse navbar-collapse" id="navbarSupportedContent"> <!--Класс, в котором у нас будут располагаться элементы навбара в самом 
         бургере-->
         <ul class="navbar-nav me-auto ms-5"> <!--Создаем список -->
           <li class="nav-item"> <!--Создаем элементы в которых будут храниться ссылки на страницы-->
@@ -36,20 +37,41 @@
             <a class="nav-link" href="#">Оплата и доставка</a>
           </li>
         </ul> <!--Navbar-nav-->
-        <form class="d-flex" role="button"> 
-          <a class = "lk-and-trash" href="#"><img src="/assets/photo/Иконка ЛК.svg" class="img-fluid" alt="#" ></a>
-          <a class="lk-and-trash" href="#"><img src="/assets/photo/Иконка корзины.svg" class="img-fluid" alt="#"></a>
-        </form>
+        <div class="d-flex" role="button"> 
+          <a class = "lk-and-trash" href="#"><img src="/assets/photo/Иконка ЛК.svg"  alt="#" width="45" height="45" ></a>
+          <a class="lk-and-trash" href="#"><img src="/assets/photo/Иконка корзины.svg" alt="#" width="45" height="45"></a>
+        </div>
 
       </div> <!-- collapse navbar-collapse -->
     </div> <!-- Container -->
+    
   </nav> <!-- Navigtaion -->
-</header> <!-- Header -->
-  
-  
+  <div class="container">
+    <section class="promo row gy-3">
+      <div class="col-md-6">
+        <div class="block"><p class="h1">Забирай епт </p></div>
+      </div>
+      <div class="col-md-6">
+        <div class="block"><img src="/assets/photo/back.svg" alt="#" class="img-fluid"></div>
+      </div>
+    </section>
+  </div>
 
-
+<footer class = "footer">
+  <div class="container">
+    <div class="row gy-3">
+        <div class="col-md-6">
+          <div class="block"><p class="h2">Забирай епт </p></div>
+        </div>
+      <div class="col-md-6">
+        <div class="block">
+          <img src="/assets/photo/telegram_logo_icon_147228 1.svg" alt="#">
+          <img src="/assets/photo/vk_icon-icons 1.svg" alt="#">
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
     <script src="js/app.js"></script>
-
 </body>
 </html>
