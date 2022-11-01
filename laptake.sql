@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 01, 2022 at 08:21 PM
+-- Generation Time: Nov 01, 2022 at 09:23 PM
 -- Server version: 10.5.15-MariaDB-0+deb11u1
 -- PHP Version: 7.4.30
 
@@ -82,6 +82,7 @@ CREATE TABLE `reviews` (
 CREATE TABLE `user` (
   `name` char(127) NOT NULL,
   `id` int(255) NOT NULL,
+  `picture` char(255) NOT NULL,
   `email` char(127) NOT NULL,
   `password` char(127) NOT NULL,
   `balance` int(11) NOT NULL
