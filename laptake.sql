@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 01, 2022 at 08:05 PM
+-- Generation Time: Nov 01, 2022 at 08:21 PM
 -- Server version: 10.5.15-MariaDB-0+deb11u1
 -- PHP Version: 7.4.30
 
@@ -24,6 +24,17 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `copy`
+--
+
+CREATE TABLE `copy` (
+  `id` int(11) NOT NULL,
+  `laptop` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `laptop`
 --
 
@@ -34,17 +45,6 @@ CREATE TABLE `laptop` (
   `price` int(10) NOT NULL,
   `description` mediumtext NOT NULL,
   `in_stock` smallint(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `laptop_id`
---
-
-CREATE TABLE `laptop_id` (
-  `id` int(11) NOT NULL,
-  `laptop` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -92,17 +92,17 @@ CREATE TABLE `user` (
 --
 
 --
+-- Indexes for table `copy`
+--
+ALTER TABLE `copy`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `laptop` (`laptop`);
+
+--
 -- Indexes for table `laptop`
 --
 ALTER TABLE `laptop`
   ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `laptop_id`
---
-ALTER TABLE `laptop_id`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `laptop` (`laptop`);
 
 --
 -- Indexes for table `renting`
@@ -139,17 +139,17 @@ ALTER TABLE `user`
 --
 
 --
--- Constraints for table `laptop_id`
+-- Constraints for table `copy`
 --
-ALTER TABLE `laptop_id`
-  ADD CONSTRAINT `laptop_id_ibfk_1` FOREIGN KEY (`laptop`) REFERENCES `laptop` (`id`) ON DELETE CASCADE;
+ALTER TABLE `copy`
+  ADD CONSTRAINT `copy_ibfk_1` FOREIGN KEY (`laptop`) REFERENCES `laptop` (`id`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `renting`
 --
 ALTER TABLE `renting`
   ADD CONSTRAINT `renting_ibfk_1` FOREIGN KEY (`user`) REFERENCES `user` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `renting_ibfk_2` FOREIGN KEY (`laptop`) REFERENCES `laptop_id` (`id`) ON DELETE CASCADE;
+  ADD CONSTRAINT `renting_ibfk_2` FOREIGN KEY (`laptop`) REFERENCES `copy` (`id`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `reviews`
