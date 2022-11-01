@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 22, 2022 at 03:22 PM
+-- Generation Time: Nov 01, 2022 at 08:05 PM
 -- Server version: 10.5.15-MariaDB-0+deb11u1
 -- PHP Version: 7.4.30
 
@@ -34,6 +34,30 @@ CREATE TABLE `laptop` (
   `price` int(10) NOT NULL,
   `description` mediumtext NOT NULL,
   `in_stock` smallint(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `laptop_id`
+--
+
+CREATE TABLE `laptop_id` (
+  `id` int(11) NOT NULL,
+  `laptop` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `renting`
+--
+
+CREATE TABLE `renting` (
+  `user` int(11) NOT NULL,
+  `laptop` int(11) NOT NULL,
+  `start` datetime NOT NULL,
+  `end` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -74,6 +98,20 @@ ALTER TABLE `laptop`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `laptop_id`
+--
+ALTER TABLE `laptop_id`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `laptop` (`laptop`);
+
+--
+-- Indexes for table `renting`
+--
+ALTER TABLE `renting`
+  ADD KEY `user` (`user`,`laptop`),
+  ADD KEY `laptop` (`laptop`);
+
+--
 -- Indexes for table `reviews`
 --
 ALTER TABLE `reviews`
@@ -99,6 +137,19 @@ ALTER TABLE `user`
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `laptop_id`
+--
+ALTER TABLE `laptop_id`
+  ADD CONSTRAINT `laptop_id_ibfk_1` FOREIGN KEY (`laptop`) REFERENCES `laptop` (`id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `renting`
+--
+ALTER TABLE `renting`
+  ADD CONSTRAINT `renting_ibfk_1` FOREIGN KEY (`user`) REFERENCES `user` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `renting_ibfk_2` FOREIGN KEY (`laptop`) REFERENCES `laptop_id` (`id`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `reviews`
