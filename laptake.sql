@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 14, 2022 at 10:07 PM
+-- Generation Time: Oct 22, 2022 at 03:22 PM
 -- Server version: 10.5.15-MariaDB-0+deb11u1
 -- PHP Version: 7.4.30
 
@@ -28,11 +28,25 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `laptop` (
+  `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `picture` varchar(255) NOT NULL,
   `price` int(10) NOT NULL,
   `description` mediumtext NOT NULL,
   `in_stock` smallint(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `reviews`
+--
+
+CREATE TABLE `reviews` (
+  `user` int(127) NOT NULL,
+  `laptop` int(127) NOT NULL,
+  `description` varchar(255) NOT NULL,
+  `stars` tinyint(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -54,6 +68,19 @@ CREATE TABLE `user` (
 --
 
 --
+-- Indexes for table `laptop`
+--
+ALTER TABLE `laptop`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `reviews`
+--
+ALTER TABLE `reviews`
+  ADD KEY `user` (`user`),
+  ADD KEY `laptop` (`laptop`);
+
+--
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
@@ -68,6 +95,17 @@ ALTER TABLE `user`
 --
 ALTER TABLE `user`
   MODIFY `id` int(255) NOT NULL AUTO_INCREMENT;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `reviews`
+--
+ALTER TABLE `reviews`
+  ADD CONSTRAINT `reviews_ibfk_1` FOREIGN KEY (`user`) REFERENCES `user` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `reviews_ibfk_2` FOREIGN KEY (`laptop`) REFERENCES `laptop` (`id`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
