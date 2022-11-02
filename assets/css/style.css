@@ -45,6 +45,7 @@ body{
   }
  .nav-link::after{
     color:var(--colorLink);
+
     content: "";
     position: absolute;
     bottom: 0;
