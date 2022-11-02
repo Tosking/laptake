@@ -37,9 +37,17 @@
             <a class="nav-link" href="#">Оплата и доставка</a>
           </li>
         </ul> <!--Navbar-nav-->
-        <div class="d-flex" role="button"> 
-          <a class = "lk-and-trash" href="#"><img src="/assets/photo/Иконка ЛК.svg"  alt="#" width="45" height="45" ></a>
-          <a class="lk-and-trash" href="#"><img src="/assets/photo/Иконка корзины.svg" alt="#" width="45" height="45"></a>
+        <!--Контейнер для создания иконки баланса-->
+        <div class="d-lg-flex flex-row text-center">
+        <div class="balance-com"><p  class="balance_comm">Баланс</p></div>
+        <div class="balance">
+          <p  class="balance_parag">63 089</p>
+          </div>
+      </div>
+        
+        <div class="d-lg-flex" role="button"> 
+          <a class = "lk-and-trash" href="#"><img src="/assets/photo/Иконка ЛК.svg"  alt="#" width="55" height="55" ></a>
+          <a class="lk-and-trash" href="#"><img src="/assets/photo/Иконка корзины.svg" alt="#" width="55" height="55"></a>
         </div>
 
       </div> <!-- collapse navbar-collapse -->
@@ -47,12 +55,15 @@
     
   </nav> <!-- Navigtaion -->
   <div class="container">
-    <section class="promo row gy-3">
-      <div class="col-md-6">
-        <div class="block"><p class="h1">Забирай епт </p></div>
+    <section class="promo row gy-3 align-items-center">
+      <div class="col-md-6 col-sm-4">
+      <div class="block"> 
+        <h1 id = "center_text_first">Дарим возможность</h1>
+        <p id = "center_text_second">Готовый к использованию ноутбук с<br> доставкой на до </p>
+         </div>
       </div>
-      <div class="col-md-6">
-        <div class="block"><img src="/assets/photo/back.svg" alt="#" class="img-fluid"></div>
+      <div class="col-md-6 col-sm-7">
+        <div class="block"><img src="/assets/photo/back.svg" alt="#" class="img-fluid rounded float-right"></div>
       </div>
     </section>
   </div>
@@ -61,7 +72,7 @@
   <div class="container">
     <div class="row gy-3">
         <div class="col-md-6">
-          <div class="block"><p class="h2">Забирай епт </p></div>
+          <div class="block"><p class="h4">Почта </p></div>
         </div>
       <div class="col-md-6">
         <div class="block">
