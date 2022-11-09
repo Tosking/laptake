@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 01, 2022 at 09:23 PM
+-- Generation Time: Nov 09, 2022 at 11:46 AM
 -- Server version: 10.5.15-MariaDB-0+deb11u1
 -- PHP Version: 7.4.30
 
@@ -29,7 +29,15 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `copy` (
   `id` int(11) NOT NULL,
-  `laptop` int(11) NOT NULL
+  `laptop` int(11) NOT NULL,
+  `owners` int(11) NOT NULL,
+  `purchase_date` date NOT NULL,
+  `programs` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL CHECK (json_valid(`programs`)),
+  `name` text NOT NULL,
+  `bundle` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL CHECK (json_valid(`bundle`)),
+  `current_condition` text NOT NULL,
+  `serial` varchar(255) NOT NULL,
+  `rent_ready` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
