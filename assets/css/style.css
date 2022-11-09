@@ -17,13 +17,13 @@ body{
 
     box-sizing: border-box;
     margin: 0;
-    font-family: 'Montserrat',sans-serif; /*В данной строке прописывается шрифт, который будет использоваться на всей странице*/
+    font-family: 'Montserrat'; /*В данной строке прописывается шрифт, который будет использоваться на всей странице*/
 }
 /*Navigation*/
 .navbar{
     
     box-sizing: border-box;
-    font-size: 17px;
+    font-size: 18px;
     border-bottom: 2px solid black;
     background-color:var(--colorHead);
     padding-bottom: 14px;
@@ -56,6 +56,18 @@ body{
     background: var(--colorLink);
     transition: width 0.3s ease 0s, left 0.3s ease 0s;
 }
+@media (max-width: 992px)
+{
+    .navbar-brand{
+        justify-content: center;
+    }
+    .navbar{
+        text-align: center;
+    }
+    .balance{
+        justify-content: center;
+    }
+}
 .nav-link:hover{
     font-weight: 650;
     color:#FC6C33;
@@ -66,26 +78,21 @@ body{
     left: 0; 
 }
 .nav-item{
-    margin-left:5px;
+    margin-left:40px;
 }
 /*Стили для иконки баланса*/
 .balance{
-    
-    width:151px;
-    height: 55px;
-    border-radius: 10%;
+    padding:8px 0;
+    width:130px;
+    height: 45px;
+    border-radius: 9%;
     background-color:#000000;
 }
 
-.balance_comm{
-    margin:0;   
-    margin-top: 13px;
-    margin-bottom: 13px;
-}
+
 .balance_parag{
+    margin:0;
     font-size:19px;
-    margin-top: 13px;
-    margin-bottom: 13px;
     color: var(--colorBalanceP);
     letter-spacing: 3px;
     font-weight: 900;
@@ -104,6 +111,7 @@ body{
 }
 /*Просто по приколу может пригодится:)*/
 .block{ 
+    
     height: 100%;
 }
 /*Основная секция с картинкой ноутбука и кнопкой перенаправления в каталог*/
@@ -122,6 +130,7 @@ body{
     font-weight: 900;
     line-height: 48px;
 }
+
 #center_text_second{
     word-break:break-all; /*Перенос строки*/
     margin:0 auto; /*обнуляем отступ параграфа, т.к в html он имеет базовый отступ*/
@@ -132,6 +141,12 @@ body{
 }
 /*Подвал сайта(еще в разработке*/
 .footer{
-    border-top:2px solid black ;
+    max-height: 100%;
+   min-height: 100px;
+    border-top:3px solid black ;
     background-color: var(--colorFooter);
+}
+#footer_telegnvk{
+    max-width: 40px;
+    min-height: 40px;
 }
