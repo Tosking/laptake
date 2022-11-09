@@ -58,15 +58,16 @@ body{
 }
 @media (max-width: 992px)
 {
-    .navbar-brand{
-        justify-content: center;
-    }
+    
     .navbar{
         text-align: center;
     }
     .balance{
-        justify-content: center;
+        margin-left:auto;
+        margin-right:auto;
     }
+
+   
 }
 .nav-link:hover{
     font-weight: 650;
@@ -109,16 +110,30 @@ body{
     background-size: contain;
     background: var(--colorBack);
 }
+.block_notebook{
+    border-bottom:1px solid #000000;
+    
+}
 /*Просто по приколу может пригодится:)*/
 .block{ 
     
     height: 100%;
 }
+.block_about_us{
+    
+}
 /*Основная секция с картинкой ноутбука и кнопкой перенаправления в каталог*/
+.promo_back{
+    border-bottom: 2px solid black;
+}
 .promo{
     min-height: 460px;
-    margin-bottom: 141px;
+    margin-bottom: 150px;
 
+}
+.about_us{
+    
+    margin-top:102px;
 }
 /*Стилизация хэдеров в секции*/
 #center_text_first{
@@ -141,8 +156,7 @@ body{
 }
 /*Подвал сайта(еще в разработке*/
 .footer{
-    max-height: 100%;
-   min-height: 100px;
+    min-height: 120px;
     border-top:3px solid black ;
     background-color: var(--colorFooter);
 }
