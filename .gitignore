@@ -1,3 +1,4 @@
 *.log
 bootstrap-5.2.2/
 php/db_credentials.json
+.htaccess
