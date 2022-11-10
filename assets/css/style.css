@@ -1,4 +1,5 @@
 /*Глобальные переменные*/
+
 :root{
     /* Переменные, хранящие цвета сайта*/
     --colorHead:#D9D9D9;  /* Цвет header'a*/
@@ -9,7 +10,11 @@
     --colorBalanceP: #FFFFFF; /*Цвет текста баланса*/ 
     --colorButtonPromo:#FC6C33;
 }
+html{
+    overflow-x:hidden;
+}
 body{
+    overflow-x:hidden;
     background: #4c4c4c;
     background: -moz-linear-gradient(-45deg,  var(--colorBack) 0%, var(--colorBack) 100%);
     background: -webkit-linear-gradient(-45deg,  var(--colorBack) 0%,var(--colorBack) 100%);
@@ -70,8 +75,20 @@ body{
         margin-left:auto;
         margin-right:auto;
     }
+    
 
    
+}
+@media(max-width:1200px)
+{
+    .navbar{
+        font-size:15px;
+    }
+    .navbar-collapse img{
+        width:35px;
+        height:35px;
+    }
+    
 }
 .nav-link:hover{
     font-weight: 600;
@@ -161,12 +178,19 @@ body{
     
     margin-top:102px;
 }
+
 .block_about_us{
     width:580px;
     height:148px;
     background: #D9D9D9;
     box-shadow: 5px 5px 10px #000000;
     border-radius: 20px;
+}
+.block_about_us img{
+    margin-right:35px;
+}
+.block_about_us p{
+    margin:0;
 }
 /*Стилизация хэдеров в секции*/
 #center_text_first{
@@ -178,7 +202,9 @@ body{
     font-weight: 900;
     line-height: 48px;
 }
-
+.text_about_us_header{
+    word-break:break-all;
+}
 #center_text_second{
     padding-top:20px;
     padding-bottom: 40px;

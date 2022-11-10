@@ -16,14 +16,14 @@
   
  <!--Это нужно для того чтобы наш навбар был фиксированным и не сворачивался на странице-->
   <nav class="navbar  navbar-expand-lg"> <!--Создаем сам навбар-->
-    <div class="container"> <!--Создаем контейнер с нужными нам отступами-->
+    <div class="container-lg container-md"> <!--Создаем контейнер с нужными нам отступами-->
       <a class="navbar-brand m-0" href="#">
         <img src="/assets/photo/logo.svg" alt="#">
       </a> <!--Затем используем специальный класс для логотипов компаний или организаций-->
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>  <!--Дефолтная иконка бургера-->
       </button> <!--Все что описано в button и сам button - это создание бургера(бургер это кнопка которая создает выпадающий список)-->
-      <div class="collapse navbar-collapse pt-lg-2" id="navbarSupportedContent"> <!--Класс, в котором у нас будут располагаться элементы навбара в самом 
+      <div class="collapse navbar-collapse pt-lg-2 pt-md-2" id="navbarSupportedContent"> <!--Класс, в котором у нас будут располагаться элементы навбара в самом 
         бургере-->
         <ul class="navbar-nav me-auto ms-auto"> <!--Создаем список -->
           <li class="nav-item"> <!--Создаем элементы в которых будут храниться ссылки на страницы-->
@@ -79,14 +79,40 @@
 
   <div class="container about_us">
     <section class="row align-items-center">
-      <div class="col-md-6">
+
+        <div class="col-md-12 col-sm-12 col-lg-6">
           <div class="block_about_us">
-            <img src="/assets/photo/Delivery 1.svg" alt="#">
+            <div class="row row-cols-1">
+            <div class="col-md-2">
+            <img src="/assets/photo/delivery.svg" alt="#">
           </div>
-      </div>
-      <div class="col-md-6">
-        хуй2
-      </div>
+          <div class="col-md-7">
+           <h4 class=" text_about_us_header"> Не нужно никуда идти!</h4>
+           <p class="text_about_us_paragraph"> Доставим ноутбук в любое удобное для вас место</p>
+          </div>
+          </div>
+          </div>
+          </div>
+         
+          <div class="col-md-12 col-sm-12 col-lg-6">
+            <div class="block_about_us">
+              <img src="/assets/photo/quality.svg" alt="#">
+              <span> Гарантия качества! </span>
+            </div>
+          </div>
+          <div class="col-md-12 col-sm-12 col-lg-6">
+            <div class="block_about_us">
+              <img src="/assets/photo/quality.svg" alt="#">
+              <span> Мы все починим! </span>
+              <span> Мы все починим! </span>
+            </div>
+            </div>
+            <div class="col-md-12 col-sm-12 col-lg-6">
+              <div class="block_about_us">
+                <img src="/assets/photo/quality.svg" alt="#">
+                <span> Всегда на связи!</span>
+              </div>
+              </div>
     </section>
   </div><!--Container about_us-->
 
