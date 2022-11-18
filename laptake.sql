@@ -2,10 +2,10 @@
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Nov 09, 2022 at 11:46 AM
--- Server version: 10.5.15-MariaDB-0+deb11u1
--- PHP Version: 7.4.30
+-- Host: mysql
+-- Generation Time: Nov 18, 2022 at 11:33 AM
+-- Server version: 8.0.29
+-- PHP Version: 8.0.24
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `laptake`
+-- Database: `ais_sinkevich1858_laptake`
 --
 
 -- --------------------------------------------------------
@@ -28,17 +28,59 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `copy` (
-  `id` int(11) NOT NULL,
-  `laptop` int(11) NOT NULL,
-  `owners` int(11) NOT NULL,
+  `id` int NOT NULL,
+  `model` int NOT NULL,
+  `owners` int NOT NULL,
   `purchase_date` date NOT NULL,
-  `programs` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL CHECK (json_valid(`programs`)),
+  `programs` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
   `name` text NOT NULL,
-  `bundle` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL CHECK (json_valid(`bundle`)),
+  `bundle` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
   `current_condition` text NOT NULL,
   `serial` varchar(255) NOT NULL,
   `rent_ready` tinyint(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `delivery`
+--
+
+CREATE TABLE `delivery` (
+  `id` int NOT NULL,
+  `worker` int NOT NULL,
+  `user` int NOT NULL,
+  `copy` int NOT NULL,
+  `date` datetime NOT NULL,
+  `adress` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `employee`
+--
+
+CREATE TABLE `employee` (
+  `id` int NOT NULL,
+  `position` int NOT NULL,
+  `employment_date` datetime NOT NULL,
+  `salary` int NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `hardware`
+--
+
+CREATE TABLE `hardware` (
+  `id` int NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `value` mediumint NOT NULL,
+  `in_stock` smallint NOT NULL,
+  `status` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -47,13 +89,64 @@ CREATE TABLE `copy` (
 --
 
 CREATE TABLE `laptop` (
-  `id` int(11) NOT NULL,
+  `id` int NOT NULL,
   `name` varchar(255) NOT NULL,
   `picture` varchar(255) NOT NULL,
-  `price` int(10) NOT NULL,
+  `price` int NOT NULL,
   `description` mediumtext NOT NULL,
-  `in_stock` smallint(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `in_stock` smallint NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `passport`
+--
+
+CREATE TABLE `passport` (
+  `user` int NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `surname` varchar(255) NOT NULL,
+  `middle_name` varchar(255) NOT NULL,
+  `birth_date` date NOT NULL,
+  `gender` tinyint(1) NOT NULL,
+  `birth_place` varchar(255) NOT NULL,
+  `serial` int NOT NULL,
+  `number` int NOT NULL,
+  `issued` varchar(255) NOT NULL,
+  `issued_date` date NOT NULL,
+  `subdivision` int NOT NULL,
+  `place_of_residence` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `payments`
+--
+
+CREATE TABLE `payments` (
+  `id` int NOT NULL,
+  `user` int NOT NULL,
+  `model` int NOT NULL,
+  `value` int NOT NULL,
+  `date` datetime NOT NULL,
+  `card` int NOT NULL,
+  `payment_choose` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Фиксирование оплат и пополнений';
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `programs`
+--
+
+CREATE TABLE `programs` (
+  `id` int NOT NULL,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `copy` int NOT NULL,
+  `license` int NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -62,11 +155,12 @@ CREATE TABLE `laptop` (
 --
 
 CREATE TABLE `renting` (
-  `user` int(11) NOT NULL,
-  `laptop` int(11) NOT NULL,
+  `id` int NOT NULL,
+  `user` int NOT NULL,
+  `copy` int NOT NULL,
   `start` datetime NOT NULL,
   `end` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -75,11 +169,12 @@ CREATE TABLE `renting` (
 --
 
 CREATE TABLE `reviews` (
-  `user` int(127) NOT NULL,
-  `laptop` int(127) NOT NULL,
+  `id` int NOT NULL,
+  `user` int NOT NULL,
+  `laptop` int NOT NULL,
   `description` varchar(255) NOT NULL,
-  `stars` tinyint(4) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `stars` tinyint NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -89,12 +184,14 @@ CREATE TABLE `reviews` (
 
 CREATE TABLE `user` (
   `name` char(127) NOT NULL,
-  `id` int(255) NOT NULL,
+  `id` int NOT NULL,
   `picture` char(255) NOT NULL,
   `email` char(127) NOT NULL,
   `password` char(127) NOT NULL,
-  `balance` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `address` varchar(255) NOT NULL,
+  `balance` int NOT NULL,
+  `cart` json NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Indexes for dumped tables
@@ -105,7 +202,28 @@ CREATE TABLE `user` (
 --
 ALTER TABLE `copy`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `laptop` (`laptop`);
+  ADD KEY `model` (`model`);
+
+--
+-- Indexes for table `delivery`
+--
+ALTER TABLE `delivery`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `worker` (`worker`,`user`,`copy`),
+  ADD KEY `user` (`user`),
+  ADD KEY `copy` (`copy`);
+
+--
+-- Indexes for table `employee`
+--
+ALTER TABLE `employee`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `hardware`
+--
+ALTER TABLE `hardware`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `laptop`
@@ -114,16 +232,39 @@ ALTER TABLE `laptop`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `passport`
+--
+ALTER TABLE `passport`
+  ADD KEY `user` (`user`);
+
+--
+-- Indexes for table `payments`
+--
+ALTER TABLE `payments`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `user` (`user`,`model`),
+  ADD KEY `model` (`model`);
+
+--
+-- Indexes for table `programs`
+--
+ALTER TABLE `programs`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `copy` (`copy`);
+
+--
 -- Indexes for table `renting`
 --
 ALTER TABLE `renting`
-  ADD KEY `user` (`user`,`laptop`),
-  ADD KEY `laptop` (`laptop`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `user` (`user`,`copy`),
+  ADD KEY `laptop` (`copy`);
 
 --
 -- Indexes for table `reviews`
 --
 ALTER TABLE `reviews`
+  ADD PRIMARY KEY (`id`),
   ADD KEY `user` (`user`),
   ADD KEY `laptop` (`laptop`);
 
@@ -138,10 +279,52 @@ ALTER TABLE `user`
 --
 
 --
+-- AUTO_INCREMENT for table `delivery`
+--
+ALTER TABLE `delivery`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `employee`
+--
+ALTER TABLE `employee`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `hardware`
+--
+ALTER TABLE `hardware`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `payments`
+--
+ALTER TABLE `payments`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `programs`
+--
+ALTER TABLE `programs`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `renting`
+--
+ALTER TABLE `renting`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `reviews`
+--
+ALTER TABLE `reviews`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT;
 
 --
 -- Constraints for dumped tables
@@ -151,14 +334,41 @@ ALTER TABLE `user`
 -- Constraints for table `copy`
 --
 ALTER TABLE `copy`
-  ADD CONSTRAINT `copy_ibfk_1` FOREIGN KEY (`laptop`) REFERENCES `laptop` (`id`) ON DELETE CASCADE;
+  ADD CONSTRAINT `copy_ibfk_1` FOREIGN KEY (`model`) REFERENCES `laptop` (`id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `delivery`
+--
+ALTER TABLE `delivery`
+  ADD CONSTRAINT `delivery_ibfk_1` FOREIGN KEY (`worker`) REFERENCES `employee` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `delivery_ibfk_2` FOREIGN KEY (`user`) REFERENCES `user` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `delivery_ibfk_3` FOREIGN KEY (`copy`) REFERENCES `copy` (`id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `passport`
+--
+ALTER TABLE `passport`
+  ADD CONSTRAINT `passport_ibfk_1` FOREIGN KEY (`user`) REFERENCES `user` (`id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `payments`
+--
+ALTER TABLE `payments`
+  ADD CONSTRAINT `payments_ibfk_1` FOREIGN KEY (`model`) REFERENCES `laptop` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `payments_ibfk_2` FOREIGN KEY (`user`) REFERENCES `user` (`id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `programs`
+--
+ALTER TABLE `programs`
+  ADD CONSTRAINT `programs_ibfk_1` FOREIGN KEY (`copy`) REFERENCES `copy` (`id`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `renting`
 --
 ALTER TABLE `renting`
   ADD CONSTRAINT `renting_ibfk_1` FOREIGN KEY (`user`) REFERENCES `user` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `renting_ibfk_2` FOREIGN KEY (`laptop`) REFERENCES `copy` (`id`) ON DELETE CASCADE;
+  ADD CONSTRAINT `renting_ibfk_2` FOREIGN KEY (`copy`) REFERENCES `copy` (`id`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `reviews`
