@@ -217,13 +217,94 @@ body{
 
 /* КАТАЛОГ */
 
-.title{
-    font-size: 48px;
-    text-align: center;
+.navbar-expand-lg{
+	margin-bottom: 0px;
 }
 
-.porno{
-    text-align: center;
+.main {
+	padding: 15px 0 60px 0;
+	background-size: cover;
+	background-image: url(../photo/more-laptop-mini.svg);
+}
+
+.main-info {
+	text-align: center;
+}
+
+.title {
+	font-weight: 900;
+	font-size: 48px;
+	line-height: 59px;
+	text-align: center;
+	color: #000000;
+	margin-bottom: 40px;
+}
+
+.main-buttons {
+	display: inline-block;
+}
+
+.main-buttons .button {
+	font-weight: 900;
+	font-size: 40px;
+	line-height: 49px;
+	text-align: center;
+	color: #FFFFFF;
+	background-color: #000000;
+	margin: 0 55px 42px 0;
+	border-radius: 20px;
+	border: none;
+	padding: 10px 0;
+	box-shadow:0 0 20px #555;
+
+	transition: background-color .2s;
+}
+/*Я остановился тут*/
+.order-text {
+	font-weight: 900;
+	font-size: 32px;
+	line-height: 39px;
+	color: #000000;
+}
+
+
+
+.order .button {
+	width: 187px;
+	height: 39px;
+	font-weight: 900;
+	font-size: 32px;
+	line-height: 0px;
+	color: #FFFFFF;
+	background-color: #000000;
+	border: none;
+	border-radius: 20px;
+}
+
+.favorite-tip {
+	width: 39px;
+	height: 39px;
+}
+
+.button:hover {
+	background-color: #FC6C33;
+	box-shadow:0 0 20px #FC6C33;
+}
+
+.laptop-description {
+	text-align: left;
+	padding-left: 20px;
+}
+
+.main .button {
+	width: 455px;
+}
+
+.laptop-item {
+	display: flex;
+	background-color: #D9D9D9;
+	padding: 22px;
+	margin-bottom: 15px;
 }
 
 
