@@ -155,7 +155,6 @@ body{
 
 }
 .btn{
-
     text-decoration: none;
     background-color: #000000;
     color:#FFFFFF;
@@ -252,14 +251,22 @@ body{
 	color: #FFFFFF;
 	background-color: #000000;
 	margin: 0 55px 42px 0;
-	border-radius: 20px;
+	border-radius: 10px;
 	border: none;
 	padding: 10px 0;
 	box-shadow:0 0 20px #555;
 
 	transition: background-color .2s;
 }
-/*Я остановился тут*/
+
+.laptop-item {
+	display: flex;
+	background-color: #D9D9D9;
+	padding: 22px;
+	margin-bottom: 15px;
+	border-radius: 10px;
+}
+
 .order-text {
 	font-weight: 900;
 	font-size: 32px;
@@ -267,23 +274,41 @@ body{
 	color: #000000;
 }
 
+.order-colum {
+	padding-top: 32px;
+}
 
+.order {
+	display: flex;
+	margin-top: 10px;
+}
 
 .order .button {
-	width: 187px;
-	height: 39px;
+	max-width: 187px;
+	max-height: 39px;
 	font-weight: 900;
 	font-size: 32px;
 	line-height: 0px;
 	color: #FFFFFF;
 	background-color: #000000;
 	border: none;
-	border-radius: 20px;
+	border-radius: 10px;
 }
 
 .favorite-tip {
+	border: none;
+	margin-left: 10px;
+	padding: 5px 3px 3px 3px;
 	width: 39px;
 	height: 39px;
+	background-color: #000000;
+	border-radius: 100%;
+
+	transition: backgraund-color .2s;
+}
+.favorite-tip:hover {
+	background-color: #FC6C33;
+	box-shadow:0 0 20px #FC6C33;
 }
 
 .button:hover {
@@ -300,11 +325,63 @@ body{
 	width: 455px;
 }
 
-.laptop-item {
+/* SALE CONDITION */
+
+.sale {
+	background-color: #000000;
+	padding: 30px 0;
+}
+
+.sale-info {
 	display: flex;
-	background-color: #D9D9D9;
-	padding: 22px;
-	margin-bottom: 15px;
+}
+
+.sale-main-text {
+	padding: 110px 0;
+	text-align: center;
+	color: white;
+}
+
+/* ALL CATALOG */
+
+ul {
+	padding-left: 29px;
+	margin: 0;
+}
+
+.catalog .laptop-item {
+	max-width: 608px;
+}
+
+.catalog .laptop-description {
+	padding-left: 0;
+	font-size: 20px;
+}
+
+.catalog .order-colum {
+	display: flex;
+	justify-content: space-between;
+}
+
+.catalog .order-text {
+	font-size: 24px;
+}
+
+.catalog .button {
+	font-weight: 900;
+	font-size: 24px;
+	max-width: 155px;
+	max-height: 33px;
+
+	margin-left: 10px;
+
+	border-radius: 10px;
+	color: white;
+	background-color: #000000;
+}
+
+.catalog .button:hover {
+	background-color: #FC6C33;
 }
 
 
