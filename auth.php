@@ -40,27 +40,6 @@
         if(isset($_COOKIE["id"])){
             header("Location: /index.html");
         }
-        if(isset($msg)){
-            echo "<h1>lol</h1>";
-            echo '<div class="modal fade show" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-modal="true" style="display:block" role="dialog">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        ...
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
-                    </div>
-                    </div>
-                </div>
-                </div>
-          ';
-        }
     }
 ?>
     <div class="position-absolute top-50 start-50 translate-middle text-center container" style="outline: 1px solid black; border-radius: 20px;">
@@ -82,7 +61,13 @@
             <div class="input-group input-group-sm mx-auto mb-5 w-75 row">
                 <input style="border: none; border-bottom: 1px solid; border-radius: 0px;" type="text" class="justify-content-center form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="Password" name="pass">
             </div>
-        
+        <?php
+            if(isset($_POST['login']) && !empty($_POST['pass'])){
+                if(isset($msg)){
+                    echo '<div class="text-center w-50 row mb-3" style="color: red;">'.$msg.'</div>';
+                }
+            }
+        ?>
         <div class="text-center">
             <button type="submit" class="btn btn-dark w-50 row mb-3" style="border-radius: 27px; font-size: 20px;font-family: \'Montserrat\'; font-weight: 900;">Login</button>
         </div>
