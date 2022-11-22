@@ -10,7 +10,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;900&display=swap" rel="stylesheet"> 
     <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/fontello.css">
-    <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="stylesheet" href="/assets/css/auth.css">
     <script src="js/bootstrap.bundle.min.js"></script>
 
@@ -42,10 +41,7 @@
         }
     }
 ?>
-    <div class="position-absolute top-50 start-50 translate-middle text-center container" style="outline: 1px solid black; border-radius: 20px;">
-    <?php
-        
-    ?>
+    <div class="position-absolute top-50 start-50 translate-middle text-center container-sm" style="outline: 1px solid black; border-radius: 20px; margin-top: 20px">
         <div class="mb-5 mt-5">
             <div class="row">
                 <div style="font-size: 40px;font-family: 'Montserrat'; font-weight: 900;">Welcome</div>
@@ -64,12 +60,12 @@
         <?php
             if(isset($_POST['login']) && !empty($_POST['pass'])){
                 if(isset($msg)){
-                    echo '<div class="text-center w-50 row mb-3" style="color: red;">'.$msg.'</div>';
+                    echo '<div class="text-center w-50 row mb-3 justify-content-lg-center" style="color: red;">'.$msg.'</div>';
                 }
             }
         ?>
         <div class="text-center">
-            <button type="submit" class="btn btn-dark w-50 row mb-3" style="border-radius: 27px; font-size: 20px;font-family: \'Montserrat\'; font-weight: 900;">Login</button>
+            <button type="submit" class="btn btn-primary w-50 btn-lg btn-dark row mb-3" style="border-radius: 27px;font-family: \'Montserrat\'; font-weight: 900;">Login</button>
         </div>
         </form>
         <div class="text-center mb-5">
