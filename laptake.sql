@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: mysql
--- Generation Time: Nov 18, 2022 at 11:33 AM
+-- Generation Time: Nov 22, 2022 at 06:51 AM
 -- Server version: 8.0.29
 -- PHP Version: 8.0.24
 
@@ -32,12 +32,12 @@ CREATE TABLE `copy` (
   `model` int NOT NULL,
   `owners` int NOT NULL,
   `purchase_date` date NOT NULL,
-  `programs` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
   `name` text NOT NULL,
   `bundle` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
   `current_condition` text NOT NULL,
   `serial` varchar(255) NOT NULL,
-  `rent_ready` tinyint(1) NOT NULL
+  `rent_ready` tinyint(1) NOT NULL,
+  `description` text NOT NULL
 ) ;
 
 -- --------------------------------------------------------
@@ -71,20 +71,6 @@ CREATE TABLE `employee` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `hardware`
---
-
-CREATE TABLE `hardware` (
-  `id` int NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `value` mediumint NOT NULL,
-  `in_stock` smallint NOT NULL,
-  `status` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `laptop`
 --
 
@@ -100,53 +86,17 @@ CREATE TABLE `laptop` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `passport`
---
-
-CREATE TABLE `passport` (
-  `user` int NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `surname` varchar(255) NOT NULL,
-  `middle_name` varchar(255) NOT NULL,
-  `birth_date` date NOT NULL,
-  `gender` tinyint(1) NOT NULL,
-  `birth_place` varchar(255) NOT NULL,
-  `serial` int NOT NULL,
-  `number` int NOT NULL,
-  `issued` varchar(255) NOT NULL,
-  `issued_date` date NOT NULL,
-  `subdivision` int NOT NULL,
-  `place_of_residence` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `payments`
 --
 
 CREATE TABLE `payments` (
   `id` int NOT NULL,
   `user` int NOT NULL,
-  `model` int NOT NULL,
   `value` int NOT NULL,
   `date` datetime NOT NULL,
   `card` int NOT NULL,
   `payment_choose` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Фиксирование оплат и пополнений';
-
--- --------------------------------------------------------
-
---
--- Table structure for table `programs`
---
-
-CREATE TABLE `programs` (
-  `id` int NOT NULL,
-  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `copy` int NOT NULL,
-  `license` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -183,14 +133,19 @@ CREATE TABLE `reviews` (
 --
 
 CREATE TABLE `user` (
-  `name` char(127) NOT NULL,
+  `nickname` char(127) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `id` int NOT NULL,
   `picture` char(255) NOT NULL,
   `email` char(127) NOT NULL,
   `password` char(127) NOT NULL,
   `address` varchar(255) NOT NULL,
   `balance` int NOT NULL,
-  `cart` json NOT NULL
+  `cart` json NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `surname` varchar(255) NOT NULL,
+  `middle-name` varchar(255) NOT NULL,
+  `serial_and_number` int NOT NULL,
+  `delivery_address` json NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
@@ -220,45 +175,26 @@ ALTER TABLE `employee`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `hardware`
---
-ALTER TABLE `hardware`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `laptop`
 --
 ALTER TABLE `laptop`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `passport`
---
-ALTER TABLE `passport`
-  ADD KEY `user` (`user`);
-
---
 -- Indexes for table `payments`
 --
 ALTER TABLE `payments`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `user` (`user`,`model`),
-  ADD KEY `model` (`model`);
-
---
--- Indexes for table `programs`
---
-ALTER TABLE `programs`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `copy` (`copy`);
+  ADD KEY `user` (`user`);
 
 --
 -- Indexes for table `renting`
 --
 ALTER TABLE `renting`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `user` (`user`,`copy`),
-  ADD KEY `laptop` (`copy`);
+  ADD KEY `user` (`copy`),
+  ADD KEY `laptop` (`copy`),
+  ADD KEY `user_2` (`user`);
 
 --
 -- Indexes for table `reviews`
@@ -291,21 +227,9 @@ ALTER TABLE `employee`
   MODIFY `id` int NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `hardware`
---
-ALTER TABLE `hardware`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT for table `payments`
 --
 ALTER TABLE `payments`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `programs`
---
-ALTER TABLE `programs`
   MODIFY `id` int NOT NULL AUTO_INCREMENT;
 
 --
@@ -345,30 +269,17 @@ ALTER TABLE `delivery`
   ADD CONSTRAINT `delivery_ibfk_3` FOREIGN KEY (`copy`) REFERENCES `copy` (`id`) ON DELETE CASCADE;
 
 --
--- Constraints for table `passport`
---
-ALTER TABLE `passport`
-  ADD CONSTRAINT `passport_ibfk_1` FOREIGN KEY (`user`) REFERENCES `user` (`id`) ON DELETE CASCADE;
-
---
 -- Constraints for table `payments`
 --
 ALTER TABLE `payments`
-  ADD CONSTRAINT `payments_ibfk_1` FOREIGN KEY (`model`) REFERENCES `laptop` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `payments_ibfk_2` FOREIGN KEY (`user`) REFERENCES `user` (`id`) ON DELETE CASCADE;
-
---
--- Constraints for table `programs`
---
-ALTER TABLE `programs`
-  ADD CONSTRAINT `programs_ibfk_1` FOREIGN KEY (`copy`) REFERENCES `copy` (`id`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `renting`
 --
 ALTER TABLE `renting`
-  ADD CONSTRAINT `renting_ibfk_1` FOREIGN KEY (`user`) REFERENCES `user` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `renting_ibfk_2` FOREIGN KEY (`copy`) REFERENCES `copy` (`id`) ON DELETE CASCADE;
+  ADD CONSTRAINT `renting_ibfk_2` FOREIGN KEY (`copy`) REFERENCES `copy` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `renting_ibfk_3` FOREIGN KEY (`user`) REFERENCES `user` (`id`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `reviews`
