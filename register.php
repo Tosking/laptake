@@ -47,7 +47,6 @@
                     $user = $pdo->query('SELECT * FROM user WHERE `login` = '.$_POST["login"].'');
                     $email = $pdo->query('SELECT * FROM user WHERE `email` = '.$_POST["email"].'');
                     if($user == 0 && $email == 0){
-                        echo "<h1>LOL</h1>";
                         $sql = 'INSERT INTO user (name, surname, login, email, password, balance) VALUES ("'.$_POST["fname"].'" , "'.$_POST["sname"].'", "'.$_POST["login"].'" , "'.$_POST["email"].'" , "'.md5($_POST["pass"]).'", 0)';
                         $pdo->query($sql);
                     }
