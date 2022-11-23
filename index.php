@@ -9,7 +9,7 @@
     <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
    
     <link rel="stylesheet" href="/assets/css/style.css">
-    
+    <?php require './php/configDB.php'; ?>
 
 </head>
 <body>
@@ -43,15 +43,21 @@
         </ul> <!--Navbar-nav-->
         <!--Контейнер для создания иконки баланса-->
       
-        <div class="d-lg-flex text-center">
-          <span class="balance_text navbar-text ptt">Баланс</span>
-          <div class="block_balance ptt">
-            <span  class="balance_parag">63 089</span>
+        
+        <?php 
+          if(isset($_COOKIE['id'])) {
+            echo '<div class="d-lg-flex text-center">
+            <span class="balance_text navbar-text ptt">Баланс</span>
+            <div class="block_balance ptt">';
+            echo '<span  class="balance_parag">';
+            echo $pdo->query("SELECT * FROM user WHERE id = ".$_COOKIE["id"]."")->fetch(PDO::FETCH_OBJ)->balance." ₽";
+            echo '</span>
             </div>
-        </div>
-
-          <a class = "lk-and-trash ptt" href="/auth.php"><img src="/assets/photo/Иконка ЛК.svg"  alt="#" width="45" height="45" ></a>
-          <a class="lk-and-trash ptt" href="#"><img src="/assets/photo/Иконка корзины.svg" alt="#" width="45" height="45"></a>
+            </div>';
+          }
+        ?>
+        <a class = "lk-and-trash ptt" href="/auth.php"><img src="/assets/photo/Иконка ЛК.svg"  alt="#" width="45" height="45" ></a>
+        <a class="lk-and-trash ptt" href="#"><img src="/assets/photo/Иконка корзины.svg" alt="#" width="45" height="45"></a>
         
         
 

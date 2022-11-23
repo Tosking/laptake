@@ -47,7 +47,7 @@
                 <div style="font-size: 40px;font-family: 'Montserrat'; font-weight: 900;">Welcome</div>
             </div>
             <div class="row">
-                <img src="/assets/photo/logo.svg" style="width: 157px; height: 111px;" class="mx-auto d-block"> 
+                <a href="/"><img src="/assets/photo/logo.svg" style="width: 157px; height: 111px;" class="mx-auto d-block"></a>
             </div>
         </div>
         <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
@@ -73,6 +73,9 @@
         </div>
         <div class="mb-3">
             <div>Нет аккаунта?<a href="/register.php" class="link-primary">Зарегистрируйтесь</a></div>
+        </div>
+        <div class="mb-3">
+            <a href="/exit.php" class="link-primary">Выйти</a>
         </div>
         
     </div>

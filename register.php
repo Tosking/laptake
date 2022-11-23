@@ -64,7 +64,7 @@
                 <div style="font-size: 40px;font-family: 'Montserrat'; font-weight: 900;">Welcome</div>
             </div>
             <div class="row">
-                <img src="/assets/photo/logo.svg" style="width: 157px; height: 111px;" class="mx-auto d-block"> 
+                <a href="/"><img src="/assets/photo/logo.svg" style="width: 157px; height: 111px;" class="mx-auto d-block"></a>
             </div>
         </div>
         <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
