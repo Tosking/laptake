@@ -44,11 +44,14 @@
                     $msg = "Логин должен быть введен без пробелов и русских символов. Максимальная длина 19";
                 }
                 else {
-                    $user = $pdo->query('SELECT * FROM user WHERE `login` = '.$_POST["login"].'');
-                    $email = $pdo->query('SELECT * FROM user WHERE `email` = '.$_POST["email"].'');
-                    if($user == 0 && $email == 0){
+                    $user = $pdo->query('SELECT * FROM user WHERE login = "'.$_POST["login"].'"');
+                    $email = $pdo->query('SELECT * FROM user WHERE email = "'.$_POST["email"].'"');
+                    if(!$user && !$email){
                         $sql = 'INSERT INTO user (name, surname, login, email, password, balance) VALUES ("'.$_POST["fname"].'" , "'.$_POST["sname"].'", "'.$_POST["login"].'" , "'.$_POST["email"].'" , "'.md5($_POST["pass"]).'", 0)';
                         $pdo->query($sql);
+                    }
+                    else{
+                        $msg = "Такой аккаунт уже существует";
                     }
                 }
             }

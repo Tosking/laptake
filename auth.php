@@ -16,15 +16,18 @@
 </head>
 <body>
 <?php
+    if(isset($_COOKIE["id"])){
+        header("Location: /");
+    }
     if(isset($_POST['login']) && !empty($_POST['pass'])) {
         require './php/configDB.php';
 
         //Защита от XSS атак
         $login = htmlspecialchars($_POST['login'], ENT_QUOTES, 'UTF-8');
-        $pass = md5(htmlspecialchars($_POST['pass'], ENT_QUOTES, 'UTF-8'));
+        $pass = md5($_POST['pass']);
 
-        $user = $pdo->query('SELECT * FROM user WHERE login = '.$login.'');
-        if($user != 0){
+        $user = $pdo->query('SELECT * FROM user WHERE login = "'.$login.'"');
+        if($user){
             $user = $user->fetch(PDO::FETCH_OBJ);
             if($user->password != $pass){
                 $msg = "Неверный логин или пароль";
@@ -35,9 +38,6 @@
         }
         else{
             $msg = "Неверный логин или пароль";
-        }
-        if(isset($_COOKIE["id"])){
-            header("Location: /index.html");
         }
     }
 ?>
