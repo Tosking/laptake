@@ -49,7 +49,7 @@
             echo '<div class="d-lg-flex flex-row">
             <span class="balance_text navbar-text me-3">Баланс</span>
             <div class="block_balance me-3 text-center">';
-            echo '<span class="balance_parag">63 089</span>';
+            echo '<span class="balance_parag">';
             echo $pdo->query("SELECT * FROM user WHERE id = ".$_COOKIE["id"]."")->fetch(PDO::FETCH_OBJ)->balance." ₽";
             echo '</span>
             </div>
