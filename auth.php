@@ -41,7 +41,7 @@
         }
     }
 ?>
-    <div class="position-absolute top-50 start-50 translate-middle text-center container-sm" style="outline: 1px solid black; border-radius: 20px; margin-top: 20px">
+    <div class="position-absolute top-50 start-50 translate-middle text-center container-sm" style="outline: 1px solid black; border-radius: 20px; margin-top: 20px; max-width: 500px">
         <div class="mb-5 mt-5">
             <div class="row">
                 <div style="font-size: 40px;font-family: 'Montserrat'; font-weight: 900;">Welcome</div>
