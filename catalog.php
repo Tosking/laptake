@@ -9,7 +9,7 @@
     <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
 
     <link rel="stylesheet" href="/assets/css/catalog.css">
-    <?php require './php/configDB.php'?>
+
 
 </head>
 <body>
@@ -122,24 +122,20 @@
 	<div class="container">
 		<div class="main-info">
 			<h1 class="title">ВСЕ НОУТБУКИ</h1>
-            <div class="laptop-items">
-				<?php
-                $query = $pdo->query('SELECT * FROM `laptop`');
-                 while($row = $query->fetch(PDO::FETCH_OBJ)){
-                     echo '<div class="laptop-item">
-					<img src=".$row->picture." alt="laptop" class="image-laptop">
+			<div class="laptop-items">
+				<div class="laptop-item">
+					<img src="/assets/photo/laptake-main-section.svg" alt="laptop" class="image-laptop">
 					<ul>
-					<div class="laptop-description"> '.$row->description.' </div>
+					<div class="laptop-description">Ноутбук ASUS TUF Dash FX517ZR-F15 Intel i7-12650H/16G/512G SSD/15,6" FHD 144Hz/GeForce RTX™ 3070 8G/Win11 en/rus Черный</div>
 					<div class="order-colum">
-						<div class="order-text" >от '.$row->price.'₽/сут.</div>
+						<div class="order-text">от 350₽/сут.</div>
 						<button class="button">Заказать</button>
 						<button class="favorite-tip">
 							<img src="/assets/photo/favorite-tip.svg" alt="favorite">
 						</button>
 					</div>
 				</ul>
-				</div> 
-			    ';}?>
+				</div>
 				<div class="laptop-item">
 					<img src="/assets/photo/laptake-main-section.svg" alt="laptop" class="image-laptop">
 					<ul>
