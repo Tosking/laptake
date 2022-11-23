@@ -18,19 +18,19 @@
     <?php
         if(isset($_POST["fname"])){
             require './php/configDB.php';
-            if(!isset($_POST["sname"])){
+            if(empty($_POST["sname"])){
                 $msg = "Введите фамилию";
             }
-            elseif(!isset($_POST["login"])){
+            elseif(empty($_POST["login"])){
                 $msg = "Введите логин";
             }
-            elseif(!isset($_POST["email"])){
+            elseif(empty($_POST["email"])){
                 $msg = "Введите почту";
             }
-            elseif(!isset($_POST["pass"])){
+            elseif(empty($_POST["pass"])){
                 $msg = "Введите пароль";
             }
-            elseif(!isset($_POST["confpass"])){
+            elseif(empty($_POST["confpass"])){
                 $msg = "Подтвердите пароль";
             }
             else{
@@ -87,16 +87,17 @@
                 <input type="text" class="justify-content-center form-control reg_place" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="Подтвердите пароль" name="confpass">
             </div>
         <?php
-            if(isset($_POST['login']) && !empty($_POST['pass'])){
-                if(isset($msg)){
-                    echo '<div class="text-center w-50 row mb-3 justify-content-lg-center" style="color: red;">'.$msg.'</div>';
-                }
+            if(isset($msg)){
+                echo '<div class="text-center w-50 row mb-3 justify-content-lg-center" style="color: red;">'.$msg.'</div>';
             }
         ?>
         <div class="text-center">
             <button type="submit" class="btn btn-primary w-50 btn-lg btn-dark row mb-3" style="border-radius: 27px;font-family: \'Montserrat\'; font-weight: 900;">Регистрация</button>
         </div>
         </form>
+        <div class="mb-3">
+            <div>Есть аккаунт?<a href="/auth.php" class="link-primary">Войдите</a></div>
+        </div>
         
     </div>
 

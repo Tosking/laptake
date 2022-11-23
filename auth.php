@@ -16,9 +16,9 @@
 </head>
 <body>
 <?php
-    if(isset($_COOKIE["id"])){
+    /*if(isset($_COOKIE["id"])){
         header("Location: /");
-    }
+    }*/
     if(isset($_POST['login']) && !empty($_POST['pass'])) {
         require './php/configDB.php';
 
@@ -72,7 +72,7 @@
             <a href="#" class="link-primary" style="font-size: 15px; text-decoration: none; color: #0a58ca">Забыли пароль?</a>
         </div>
         <div class="mb-3">
-            <div>Нет аккаунта?<a href="#" class="link-primary">Зарегистрируйтесь</a></div>
+            <div>Нет аккаунта?<a href="/register.php" class="link-primary">Зарегистрируйтесь</a></div>
         </div>
         
     </div>
