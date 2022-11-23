@@ -10,17 +10,15 @@
     --colorBalanceP: #FFFFFF; /*Цвет текста баланса*/ 
     --colorButtonPromo:#FC6C33;
 }
-html{
-    overflow-x:hidden;
-}
+
 body{
-    overflow-x:hidden;
+    
     background: #4c4c4c;
     background: -moz-linear-gradient(-45deg,  var(--colorBack) 0%, var(--colorBack) 100%);
     background: -webkit-linear-gradient(-45deg,  var(--colorBack) 0%,var(--colorBack) 100%);
     background: linear-gradient(135deg,  var(--colorBack) 0%,var(--colorBack) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', endColorstr='#969696',GradientType=1 );
-
+    padding:0;
     box-sizing: border-box;
     margin: 0;
     font-family: 'Montserrat'; /*В данной строке прописывается шрифт, который будет использоваться на всей странице*/
@@ -33,11 +31,12 @@ body{
     border-bottom: 2px solid black;
     background-color:var(--colorHead);
     padding-bottom: 14px;
-    margin-bottom: 100px;
+    
 }
 
 /*Стилизация ссылок в навигации*/
 .navbar-nav a{
+    white-space: nowrap;
     font-weight: 400;
     font-style: normal;
     transition: font-weight .2s, color .2s,  line-through .2s !important; 
@@ -67,7 +66,6 @@ body{
 т.е адаптация */
 @media (max-width: 992px)
 {
-    
     .navbar{
         text-align: center;
     }
@@ -75,9 +73,12 @@ body{
         margin-left:auto;
         margin-right:auto;
     }
+    .balance_text{
+        margin: auto;
+    }
     
-
-   
+    
+    
 }
 @media(max-width:1200px)
 {
@@ -108,10 +109,10 @@ body{
     height: 45px;
     border-radius: 9%;
     background-color:#000000;
+    
 }
 
 .balance_parag{
-    margin:0;
     font-size:19px;
     color: var(--colorBalanceP);
     letter-spacing: 0.12em;
@@ -125,10 +126,7 @@ body{
     color:#000000;
 }
 /*Личный кабинет и корзина*/
-/*общий отступ для элементов где располагается лк, корзина и баланс*/
-.ptt{
-    margin-right: 12px;
-}
+
 /*Обнуление margin у последнего элемента*/
 .lk-and-trash:last-child{
     margin-right:0;
@@ -150,6 +148,7 @@ body{
     border-bottom: 2px solid black;
 }
 .promo{
+    margin-top:100px;
     min-height: 460px;
     margin-bottom: 150px;
 
@@ -175,12 +174,13 @@ body{
     color: #000000;
 }
 .about_us{
-    
+    min-height:1000px;
     margin-top:102px;
 }
 
 .block_about_us{
-    width:580px;
+    margin-bottom: 144px;
+    max-width:580px;
     height:148px;
     background: #D9D9D9;
     box-shadow: 5px 5px 10px #000000;
@@ -213,15 +213,14 @@ body{
     font-weight: 400;
     font-size:24px;
     line-height: 48px;
-
 }
 /*Подвал сайта(еще в разработке)*/
 .footer{
     min-height: 120px;
-    border-top:3px solid black ;
+    border-top:2px solid black ;
     background-color: var(--colorFooter);
 }
 #footer_telegnvk{
-    max-width: 40px;
-    min-height: 40px;
+    max-width: 45px;
+    min-height: 45px;
 }

@@ -15,7 +15,7 @@
 <body>
   
  <!--Это нужно для того чтобы наш навбар был фиксированным и не сворачивался на странице-->
-  <nav class="navbar  navbar-expand-lg"> <!--Создаем сам навбар-->
+  <nav class="navbar  navbar-expand-lg fixed-top"> <!--Создаем сам навбар-->
     <div class="container-lg container-md"> <!--Создаем контейнер с нужными нам отступами-->
       <a class="navbar-brand m-0" href="/">
         <img src="/assets/photo/logo.svg" alt="#">
@@ -46,19 +46,19 @@
         
         <?php 
           if(isset($_COOKIE['id'])) {
-            echo '<div class="d-lg-flex text-center">
-            <span class="balance_text navbar-text ptt">Баланс</span>
-            <div class="block_balance ptt">';
-            echo '<span  class="balance_parag">';
+            echo '<div class="d-lg-flex flex-row">
+            <span class="balance_text navbar-text me-3">Баланс</span>
+            <div class="block_balance me-3 text-center">';
+            echo '<span class="balance_parag">63 089</span>';
             echo $pdo->query("SELECT * FROM user WHERE id = ".$_COOKIE["id"]."")->fetch(PDO::FETCH_OBJ)->balance." ₽";
             echo '</span>
             </div>
             </div>';
           }
         ?>
-        <a class = "lk-and-trash ptt" href="/auth.php"><img src="/assets/photo/Иконка ЛК.svg"  alt="#" width="45" height="45" ></a>
-        <a class="lk-and-trash ptt" href="#"><img src="/assets/photo/Иконка корзины.svg" alt="#" width="45" height="45"></a>
-        
+  
+        <a class = "lk-and-trash me-3" href="/auth.php"><img src="/assets/photo/Иконка ЛК.svg"  alt="#" width="45" height="45" ></a>
+          <a class="lk-and-trash " href="#"><img src="/assets/photo/Иконка корзины.svg" alt="#" width="45" height="45"></a>
         
 
       </div> <!-- collapse navbar-collapse -->
@@ -66,73 +66,105 @@
     
   </nav> <!-- Navigtaion -->
 
-  <div class="container-fluid promo_back">
+  <div class="container-fluid promo_back" style = "margin-top:220px;">
     <div class="container">
     <section class="promo row gy-3 align-items-center">
-      <div class="col-md-6 col-sm-4">
+      <div class="col-md-6 col-sm-12 col-lg-6">
       <div class="block"> 
         <h1 id = "center_text_first">Дарим возможность</h1>
         <p id = "center_text_second">Готовый к использованию ноутбук с<br> доставкой на дом </p>
          </div>
          <button type="button" class="btn"><strong>Заказать в один клик</strong></button>
       </div>
-      <div class="col-md-6 col-sm-7">
+      <div class="col-md-6 col-sm-12 col-lg-6">
         <div class="block"><img src="/assets/photo/back.svg" alt="#" class="img-fluid"></div>
       </div>
     </section> <!--Section promo row-->
   </div> <!--Container-->
 </div><!--Container-fluid promo_back-->
 
-  <div class="container about_us">
+<div class="container about_us">
     <section class="row align-items-center">
 
         <div class="col-md-12 col-sm-12 col-lg-6">
           <div class="block_about_us">
-            <div class="row row-cols-1">
-            <div class="col-md-2">
+            <div class="d-flex flex-row  pt-4">
+            <div class="col-md-2 col-lg-2">
             <img src="/assets/photo/delivery.svg" alt="#">
           </div>
-          <div class="col-md-7">
+          <div class="col-md-6 col-lg-6">
            <h4 class=" text_about_us_header"> Не нужно никуда идти!</h4>
            <p class="text_about_us_paragraph"> Доставим ноутбук в любое удобное для вас место</p>
           </div>
-          </div>
-          </div>
-          </div>
+          </div>  <!--row-->
+          </div> <!--about_s-->
+          </div>  <!--Col-->
          
           <div class="col-md-12 col-sm-12 col-lg-6">
             <div class="block_about_us">
-              <img src="/assets/photo/quality.svg" alt="#">
-              <span> Гарантия качества! </span>
-            </div>
+              <div class="d-flex flex-row pt-4">
+                <div class="col-md-2 col-lg-2">
+                  <img src="/assets/photo/quality.svg" alt="#">
+                </div>
+                
+              <div class="col-md-6 col-lg-6">
+              <h4 class=" text_about_us_header"> Гарантия качества</h4>
+           <p class="text_about_us_paragraph">Доставка исправной и качественной техники</p>
           </div>
+           </div> <!--Row-->
+            </div> <!--about_us-->
+          </div>  <!--columns-md-12-->
+          
           <div class="col-md-12 col-sm-12 col-lg-6">
             <div class="block_about_us">
+            <div class="d-flex flew-row pt-4">
+
+            <div class="col-md-2 col-lg-2"> 
               <img src="/assets/photo/quality.svg" alt="#">
-              <span> Мы все починим! </span>
-              <span> Мы все починим! </span>
             </div>
+
+            <div class="col-md-6 col-lg-6">
+              <h4 class=" text_about_us_header"> Мы все починим!</h4>
+           <p class="text_about_us_paragraph"> В случае неисправности, вы всегда можете обратиться к нам и поменять ноутбук</p>
+
             </div>
+            </div> <!--Row-->
+            </div> <!--about_us-->
+        </div> <!--columns-md-12-->
             <div class="col-md-12 col-sm-12 col-lg-6">
               <div class="block_about_us">
-                <img src="/assets/photo/quality.svg" alt="#">
-                <span> Всегда на связи!</span>
-              </div>
-              </div>
+                <div class="d-flex flex-row pt-4">
+
+                <div class="col-md-2 col-lg-2">
+                   <img src="/assets/photo/quality.svg" alt="#">
+                </div>
+
+                <div class="col-md-6 col-lg-6">
+                   <h4 class=" text_about_us_header"> Всегда на связи</h4>
+                <p class="text_about_us_paragraph"> Поможем в решении любых вопросов</p>
+               </div>
+                </div> <!--Row-->
+              </div> <!--about_us-->
+              </div> <!--columns-md-12-->
     </section>
   </div><!--Container about_us-->
 
 
-<footer class = "container-fluid footer">
+  <footer class = "container-fluid footer fixed-bottom">
   <div class="container">
-    <div class="row pt-4">
-        <div class="col-md-6 col-sm-6 col-6">
-        <div class="d-inline"><img src="/assets/photo/email.svgу меня" alt="#"></div>
-        <div class="d-inline"><img src="/assets/photo/phone.svg" alt="#"></div>
-        </div>
-      <div class="col-md-6 col-sm-6 col-6">
-        <div class="d-inline"> <img src="/assets/photo/telegram_logo_icon_147228 1.svg" class = "rounded float-end"id="footer_telegnvk"  alt="#"></div>
-          <div class="d-inline" > <img src="/assets/photo/vk_icon-icons 1.svg"class = "rounded float-end" id="footer_telegnvk" alt="#"></div>
+    <div class="row pt-5">
+        <div class="col-lg-3 col-md-5 col-sm-5 col-6 pt-2">
+          <img src="/assets/photo/email.svg"width="205" height="28" alt="#">
+      </div>
+      <div class="col-lg-3 col-md-5 pt-2 col-sm-5 col-6 ">
+      <img src="/assets/photo/phone.svg" width="205" height="28" alt="#"> 
+    </div>
+      <div class="col-lg-5 col-md-1 col-sm-1 col-4">
+        <img src="/assets/photo/telegram_logo_icon_147228 1.svg" class = "rounded float-end"id="footer_telegnvk"  alt="#">
+        
+      </div>
+      <div class="col-lg-1 col-md-1 col-sm-1 col-4">
+         <img src="/assets/photo/vk_icon-icons 1.svg"class = "rounded float-end" id="footer_telegnvk" alt="#">
       </div>
     </div><!--Row-->
   </div><!--Container-->
