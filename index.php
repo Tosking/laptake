@@ -88,11 +88,11 @@
 
         <div class="col-md-12 col-sm-12 col-lg-6">
           <div class="block_about_us">
-            <div class="d-flex flex-row  pt-4">
-            <div class="col-md-2 col-lg-2">
-            <img src="/assets/photo/delivery.svg" alt="#">
+            <div class="d-flex flex-row pt-4 pb-4 ps-3 pe-3">
+            <div class="col-md-2 col-lg-3">
+            <img src="/assets/photo/delivery.svg" id="img_about_us" alt="#">
           </div>
-          <div class="col-md-6 col-lg-6">
+          <div class="col-md-7 col-lg-9 pt-2 pt-lg-1">
            <h4 class=" text_about_us_header"> Не нужно никуда идти!</h4>
            <p class="text_about_us_paragraph"> Доставим ноутбук в любое удобное для вас место</p>
           </div>
@@ -102,12 +102,12 @@
          
           <div class="col-md-12 col-sm-12 col-lg-6">
             <div class="block_about_us">
-              <div class="d-flex flex-row pt-4">
-                <div class="col-md-2 col-lg-2">
-                  <img src="/assets/photo/quality.svg" alt="#">
+              <div class="d-flex flex-row pt-4 pb-4 ps-3 pe-3">
+                <div class="col-md-2 col-lg-3">
+                  <img src="/assets/photo/quality.svg" id="img_about_us" alt="#">
                 </div>
-                
-              <div class="col-md-6 col-lg-6">
+
+              <div class="col-md-6 col-lg-9 col-sm-9 pt-2 pt-lg-1">
               <h4 class=" text_about_us_header"> Гарантия качества</h4>
            <p class="text_about_us_paragraph">Доставка исправной и качественной техники</p>
           </div>
@@ -117,13 +117,13 @@
           
           <div class="col-md-12 col-sm-12 col-lg-6">
             <div class="block_about_us">
-            <div class="d-flex flew-row pt-4">
+            <div class="d-flex flex-row pt-3 pb-4  ps-3 pe-3">
 
-            <div class="col-md-2 col-lg-2"> 
-              <img src="/assets/photo/quality.svg" alt="#">
+            <div class="col-md-2 col-lg-3"> 
+              <img src="/assets/photo/service.svg" id="img_about_us"  alt="#">
             </div>
 
-            <div class="col-md-6 col-lg-6">
+            <div class="col-md-9 col-lg-9 col-sm-9 pt-2 pt-lg-1">
               <h4 class=" text_about_us_header"> Мы все починим!</h4>
            <p class="text_about_us_paragraph"> В случае неисправности, вы всегда можете обратиться к нам и поменять ноутбук</p>
 
@@ -133,13 +133,13 @@
         </div> <!--columns-md-12-->
             <div class="col-md-12 col-sm-12 col-lg-6">
               <div class="block_about_us">
-                <div class="d-flex flex-row pt-4">
+                <div class="d-flex flex-row pt-4 pb-4 ps-3 pe-3">
 
-                <div class="col-md-2 col-lg-2">
-                   <img src="/assets/photo/quality.svg" alt="#">
+                <div class="col-md-2 col-lg-3">
+                   <img src="/assets/photo/comunication.svg" id="img_about_us" alt="#">
                 </div>
 
-                <div class="col-md-6 col-lg-6">
+                <div class="col-md-6 col-lg-9 col-sm-6 pt-2 pt-lg-1">
                    <h4 class=" text_about_us_header"> Всегда на связи</h4>
                 <p class="text_about_us_paragraph"> Поможем в решении любых вопросов</p>
                </div>
@@ -150,7 +150,7 @@
   </div><!--Container about_us-->
 
 
-  <footer class = "container-fluid footer fixed-bottom">
+  <footer class = "container-fluid footer ">
   <div class="container">
     <div class="row pt-5">
         <div class="col-lg-3 col-md-5 col-sm-5 col-6 pt-2">
