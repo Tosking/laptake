@@ -89,7 +89,6 @@ body{
         width:35px;
         height:35px;
     }
-    
 }
 .nav-link:hover{
     font-weight: 600;
@@ -173,12 +172,16 @@ body{
     background-color: var(--colorButtonPromo); 
     color: #000000;
 }
+#img_about_us{
+    margin: 0;
+}
 .about_us{
     min-height:1000px;
     margin-top:102px;
 }
 
 .block_about_us{
+   
     margin-bottom: 144px;
     max-width:580px;
     height:148px;
@@ -186,9 +189,7 @@ body{
     box-shadow: 5px 5px 10px #000000;
     border-radius: 20px;
 }
-.block_about_us img{
-    margin-right:35px;
-}
+
 .block_about_us p{
     margin:0;
 }
@@ -203,7 +204,11 @@ body{
     line-height: 48px;
 }
 .text_about_us_header{
+    font-weight: bold;
     word-break:break-all;
+}
+.text_about_us_paragraph{
+    font-size:19px;
 }
 #center_text_second{
     padding-top:20px;
