@@ -26,9 +26,10 @@
         $login = htmlspecialchars($_POST['login'], ENT_QUOTES, 'UTF-8');
         $pass = md5($_POST['pass']);
 
-        $user = $pdo->query('SELECT 1 FROM user WHERE login = "'.$login.'"');
-        if(isset($user->password)){
-            $user = $user->fetch(PDO::FETCH_OBJ);
+        $user = $pdo->query('SELECT * FROM user WHERE login = "'.$login.'"')->fetch(PDO::FETCH_OBJ);
+        //echo "{$user}";
+        if($user){
+
             if($user->password != $pass){
                 $msg = "Неверный логин или пароль";
             }

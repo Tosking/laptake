@@ -44,9 +44,10 @@
                     $msg = "Логин должен быть введен без пробелов и русских символов. Максимальная длина 19";
                 }
                 else {
-                    $user = $pdo->query('SELECT * FROM user WHERE login = "'.$_POST["login"].'"');
-                    $email = $pdo->query('SELECT * FROM user WHERE email = "'.$_POST["email"].'"');
-                    if(!$user && !$email){
+                    $user = $pdo->query('SELECT COUNT(*) FROM user WHERE login = "'.$_POST["login"].'"')->fetchColumn();
+                    $email = $pdo->query('SELECT COUNT(*) FROM user WHERE email = "'.$_POST["email"].'"')->fetchColumn();
+                    //echo "{$user}  {$email}";
+                    if($user == 0 && $email == 0){
                         $sql = 'INSERT INTO user (name, surname, login, email, password, balance) VALUES ("'.$_POST["fname"].'" , "'.$_POST["sname"].'", "'.$_POST["login"].'" , "'.$_POST["email"].'" , "'.md5($_POST["pass"]).'", 0)';
                         $pdo->query($sql);
                     }
@@ -69,26 +70,26 @@
         </div>
         <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
             <div class="input-group input-group-sm mx-auto mb-5 w-75 row">
-                <input type="text" class="justify-content-center form-control reg_place" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="Имя" name="fname">
+                <input type="text" class="justify-content-center form-control reg_place" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="Имя" name="fname" value="<?php if(isset($_POST["fname"])){echo $_POST["fname"];}?>">
             </div>
             <div class="input-group input-group-sm mx-auto mb-5 w-75 row">
-                <input type="text" class="justify-content-center form-control reg_place" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="Фамилия" name="sname">
+                <input type="text" class="justify-content-center form-control reg_place" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="Фамилия" name="sname" value="<?php if(isset($_POST["sname"])){echo $_POST["sname"];}?>">
             </div>
             <div class="input-group input-group-sm mx-auto mb-5 w-75 row">
-                <input type="text" class="justify-content-center form-control reg_place" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="Логин" name="login">
+                <input type="text" class="justify-content-center form-control reg_place" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="Логин" name="login" value="<?php if(isset($_POST["login"])){echo $_POST["login"];}?>">
             </div>
             <div class="input-group input-group-sm mx-auto mb-5 w-75 row">
-                <input type="text" class="justify-content-center form-control reg_place" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="Email" name="email">
+                <input type="text" class="justify-content-center form-control reg_place" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="Email" name="email" value="<?php if(isset($_POST["email"])){echo $_POST["email"];}?>">
             </div>
             <div class="input-group input-group-sm mx-auto mb-5 w-75 row">
-                <input type="text" class="justify-content-center form-control reg_place" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="Пароль" name="pass">
+                <input type="password" class="justify-content-center form-control reg_place" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="Пароль" name="pass">
             </div>
             <div class="input-group input-group-sm mx-auto mb-5 w-75 row">
-                <input type="text" class="justify-content-center form-control reg_place" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="Подтвердите пароль" name="confpass">
+                <input type="password" class="justify-content-center form-control reg_place" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="Подтвердите пароль" name="confpass">
             </div>
         <?php
             if(isset($msg)){
-                echo '<div class="text-center w-50 row mb-3 justify-content-lg-center" style="color: red;">'.$msg.'</div>';
+                echo '<div class="text-center row mb-3 justify-content-center" style="color: red;">'.$msg.'</div>';
             }
         ?>
         <div class="text-center">
