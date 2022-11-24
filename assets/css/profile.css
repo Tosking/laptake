@@ -22,12 +22,24 @@ body{
 }
 
 .wrapper1 {
+    background-size: cover;
+    background-image: url(../photo/more-laptop-mini.svg);
     min-height: 100%;
     display: flex;
     flex-direction: column;
 }
 
-
+@media(max-width:520px) {
+    .for-large-screens {
+      display:none;
+    }
+  }
+  
+  @media(min-width:521px) {
+    .for-small-screens {
+      display:none;
+    }
+  }
 
 /*Navigation*/
 .navbar{
@@ -53,7 +65,7 @@ body{
     display: inline-block;
     position: relative;
   }
- .nav-link::after{
+.nav-link::after{
     color:var(--colorLink);
     content: "";
     position: absolute;
@@ -125,13 +137,15 @@ body{
 
 .tab_photo{
     width: 210px;
-    height: 300px;
+    min-height: 300px;
     background-color: var(--colorHead);
     border-radius: 10px;
     padding-top: 26px;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 30px;
 }
+
 
 .fullname{
     text-align: center;
@@ -149,12 +163,6 @@ body{
 /*Просто по приколу может пригодится:)*/
 .block{ 
     height: 100%;
-}
-/*Основная секция с картинкой ноутбука и кнопкой перенаправления в каталог*/
-.promo{
-    min-height: 460px;
-    margin-bottom: 141px;
-
 }
 /*Стилизация хэдеров в секции*/
 #center_text_first{
@@ -207,7 +215,22 @@ body{
 	text-transform: uppercase;
 	color: #3A3A3A;
 	text-decoration: none;
+    background-color: #c0c0c0;
+    border: 1px solid #AEAEAE;
 }
+.laptop_picture{
+    background-size: cover;
+}
+.tabs__item:hover{
+    color: #FC6C33;
+}
+.tabs__item:nth-child(1){
+    border-radius: 10px 0 0 0;
+}
+.tabs__item:nth-child(3){
+    border-radius: 0 10px 0 0;
+}
+
 /* расположение названий вкладок */
 .tabs__item span {
 	position: relative;
@@ -219,18 +242,35 @@ body{
 	padding: 20px;
 	font-size: 18px;
 	line-height: 24px;
-	display: none;
-    background-color: #D9D9D9;
     border-radius: 0 0 10px 10px;
+    display: none;
+    background-color: #D9D9D9;
+
 }
+/* .tabs__block:nth-child(1){
+    background-color: #E1E1E1;
+    display: none;
+    box-shadow: 6px 6px 4px rgba(0, 0, 0, 0.25);
+}
+.tabs__block:nth-child(2){
+    background-color: #C1C1C1;
+    display: none;
+}
+.tabs__block:nth-child(3){
+    background-color: #BFBFBF;
+    display: none;
+} */
 /* блок переключений над табами */
 .tabs__block:before {
 	content: "";
 	height: 50px;
 	width: 33.333%;
 	position: absolute;
-	top: -49px;
+	top: -50px;      
     background-color: #D9D9D9;
+    /* border-right: 1px solid #AEAEAE;
+    border-left: 1px solid #AEAEAE;
+    border-top: 1px solid #AEAEAE; */
 }
 
 .tabs__block:nth-child(1):before {
@@ -238,7 +278,7 @@ body{
     border-radius: 10px 0 0 0;
 }
 .tabs__block:nth-child(2):before {
-    right: 33.333%;
+    left: 33.333%;
 }
 .tabs__block:nth-child(3):before {
     right: 0;
@@ -250,7 +290,7 @@ body{
 }
 /* фоновый блок под почту */
 .block_mail{
-    margin-top: 25px;
+    margin-top: 10px;
     display: inline-flex;
     border-radius: 10px;
     padding: 5px 15px;
@@ -276,6 +316,10 @@ body{
 .phone_picture{
     margin-right: 20px;
 } 
+.lolp .container{
+    padding-left: 0px;
+    padding-right: 0px;
+}
 /* фоновый блок под карту */
 .block_card{
     margin-top: 25px;
@@ -296,19 +340,56 @@ body{
     position: relative;
 }
 /* кнопка редактирования ин-фы в личной информации */
-button{
+/* button{
     margin-top: 25px;
-    float: right;
-    width: 35px;
-    height: 35px;
     border-radius: 10px;
-    /* border: none; 
-    outline: none; */
+    border: none; 
+    outline: none; 
     background-color: #BFBFBF;
-}
+    box-shadow:0 0 20px #000000; 
+}   */
 /* общий блок дат аренды и суммы оплаты чтобы опустить их ниже */
 .describing_laptop_down{
     display: inline-block;
     position: relative; 
     padding-top: 20px;
 }
+
+.all_button{
+    display: inline;
+    position: relative;
+    
+}
+.button_settings{
+    width: 40%;
+    margin-left: 15px;
+    margin-right: 6px;
+    margin-bottom: 15px;
+    padding: 5px;
+}
+.button_exit{
+    width: 40%;
+    margin-bottom: 15px;
+    padding: 5px;
+}
+button{
+    margin-top: 25px;
+    border-radius: 10px;
+    border: none; 
+    outline: none; 
+    text-decoration: none;
+    background-color: #000000;
+    /* box-shadow: 6px 6px 4px rgba(0, 0, 0, 0.25); */
+    transition: .2s ease-in-out;
+}
+
+button:hover{
+    background-color: #FC6C33;
+}
+@media(max-width:767px) {
+    .for-small-screens_laptop {
+        align-items: center;
+        justify-content: center;
+    }
+}
+

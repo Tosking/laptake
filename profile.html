@@ -55,25 +55,38 @@
     
   </nav> <!-- Navigtaion -->
 
-    <div class="container">
+    <div class="container main">
       <div class="row">
-        <div class="col-md-3 col-sm-12 col-xs-12">
+        <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
           <div class="tab_photo">
             <div class="photo">
               <div class="profile_picture"><img width="164" height="164" src="/assets/photo/profile_picture.svg" alt="#"></div>
             </div>
             <div id="nickname" class="fullname"> Вовчик Прикольчик</div>
+            <div class="all_button">
+              <button type="button" class="button_settings"><img src="/assets/photo/settings.svg" alt="#" width="30" height="30"></button>
+              <button type="button" class="button_exit"><img src="/assets/photo/exit.svg" alt="#" width="30" height="30"></button>
+            </div>
          </div>
         </div>
-        <div class="col-md-9 col-sm-12 col-xs-12">
+        <div class=" col-lg-9 col-md-12 col-sm-12 col-xs-12">
           <div class="container">
             <div class="wrapper">
               <div class="content">
                 <div class="tabs">
                   <nav class="tabs__items">
-                    <a href="#tab_01" class="tabs__item"><span>Личная информация</span></a>
-                    <a href="#tab_02" class="tabs__item"><span>Избранное</span></a>
-                    <a href="#tab_03" class="tabs__item"><span>Заказы</span></a>
+                    <a href="#tab_01" class="tabs__item"><span>
+                      <div class="for-small-screens"><img src="/assets/photo/personal_information.svg" alt="#"></div>
+                      <div class="for-large-screens">Личная информация</div>
+                    </span></a>
+                    <a href="#tab_02" class="tabs__item"><span>
+                      <div class="for-small-screens"><img src="/assets/photo/heart.svg" alt="#"></div>
+                      <div class="for-large-screens">Избранное</div>
+                    </span></a>
+                    <a href="#tab_03" class="tabs__item"><span>
+                      <div class="for-small-screens"><img src="/assets/photo/history.svg" alt="#"></div>
+                      <div class="for-large-screens">Заказы</div>
+                    </span></a>
                   </nav>
                   <div class="tabs__body">
                     <div id="tab_01" class="tabs__block">
@@ -89,7 +102,6 @@
                               </div>
                             </div>
                             <!-- кнопка редактирования всего -->
-                            <button type="button" id="edit_mail"><img src="/assets/photo/edit.svg" alt="#"></button>
                           </div>
                           <!-- блок телефона -->
                           <div class="tab_phone">
@@ -99,7 +111,6 @@
                                 +7(922)420-25-40
                               </div>
                             </div>
-                            <!-- <button type="button" id="edit_phone"><img src="/assets/photo/edit.svg" alt="#"></button> -->
                           </div>
                           <!-- блок карт -->
                           <div class="tab_card">
@@ -109,14 +120,14 @@
                                 1234 5678 9012 3456
                               </div>
                             </div>
-                            <!-- <button type="button" id="edit_card"><img src="/assets/photo/edit.svg" alt="#"></button> -->
                           </div>
                         </div>
                       </div>
                     </div>
                     <!-- заполняем второй блок вкладки - избранные ноутбуки-->
-                    <div id="tab_02" class="tabs__block">
+                    <div id="tab_02" class="tabs__block lolp">
                       <div class="block_laptop">
+                        <div class="for-small-screens_laptop">      
                         <!-- <div class="row">
                           <div class="col-md-3 col-sm-3 col-xs-3"> -->
                             <div class="laptop_picture_fav inline" id="personal_laptop_picture"> 
@@ -126,7 +137,7 @@
                           <!-- <div class="col-md-9 col-sm-9 col-xs-9"> -->
                             <div class="describing_laptop_fav inline">
                               <div class="name_laptop" id="personal_name_laptop">
-                                ASER Nitro 5
+                                <strong>ASER Nitro 5</strong>
                               </div>
                               <div class="parameter_laptop" id="personal_parameter_laptop">
                                 Intel i5 (10G)/16gb/SSD GeForce 1050ti — 4gb
@@ -134,23 +145,24 @@
                             </div>
                           <!-- </div>
                         </div> -->
+                        </div>
                       </div>
                     </div>
                     <!-- заполняем третий блок вкладки -->
                     <div id="tab_03" class="tabs__block">
-                      <div class="container">
+                      <!-- <div class="container"> -->
                         <div class="block_laptop">
                           <div class="row">
                             <!-- колонка под фото ноутбука-->
-                            <div class="col-md-3 col-sm-3 col-xs-3">
+                            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                               <div class="laptop_picture inline" id="personal_laptop_picture">
                                 <img src="/assets/photo/personal_picture_laptop.svg" alt="#">
                               </div>
                             </div>
                             <!-- колонка под описание ноутбука -->
-                            <div class="col-md-9 col-sm-9 col-xs-9">
+                            <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
                               <div class="name_laptop" id="personal_name_laptop">
-                                ASER Nitro 5
+                                <strong>ASER Nitro 5</strong>
                               </div>
                               <div class="parameter_laptop" id="personal_parameter_laptop">
                                 Intel i5 (10G)/16gb/SSD GeForce 1050ti — 4gb
@@ -177,7 +189,7 @@
                             </div>
                           </div>
                         </div>
-                      </div>
+                      <!-- </div> -->
                     </div>
                   </div>
                 </div>
@@ -186,7 +198,8 @@
           </div>
         </div>
       </div>
-    </div>
+      </div>
+
 
 <footer class = "footer">
   <div class="container">
