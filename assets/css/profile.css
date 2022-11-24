@@ -389,8 +389,14 @@ button:hover{
 }
 @media(max-width:767px) {
     .for-small-screens_laptop {
-        align-items: center;
-        justify-content: center;
+        text-align: center; 
+
+    }
+    .name_laptop{
+        font-size: large;
+        padding-top: 15px;
     }
 }
-
+.parameter_laptop{
+    padding-top: 3px;
+}
