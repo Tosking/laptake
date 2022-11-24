@@ -21,7 +21,8 @@ body{
     font-family: 'Montserrat',sans-serif; /*В данной строке прописывается шрифт, который будет использоваться на всей странице*/
 }
 
-.wrapper1 {
+.main {
+    padding-top: 180px;
     background-size: cover;
     background-image: url(../photo/more-laptop-mini.svg);
     min-height: 100%;
