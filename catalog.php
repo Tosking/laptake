@@ -127,14 +127,14 @@
                 $query = $pdo->query('SELECT * FROM `laptop`');
                 while($row = $query->fetch(PDO::FETCH_OBJ)){
                     echo '<div class="laptop-item">
-					<img src=".$row->picture." alt="laptop" class="image-laptop">
+					<img src="'.$row->picture.'" alt="laptop" class="image-laptop">
 					<ul>
 					<div class="laptop-description"> '.$row->description.' </div>
 					<div class="order-colum">
 						<div class="order-text" >от '.$row->price.'₽/сут.</div>
 						<button class="button">Заказать</button>
 						<button class="favorite-tip">
-							<img src="'.$row->picture.'" alt="favorite">
+							<img src="/assets/photo/favorite-tip.sv" alt="favorite">
 						</button>
 					</div>
 				</ul>
