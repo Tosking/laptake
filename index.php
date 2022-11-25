@@ -168,17 +168,17 @@
   <footer class = "container-fluid footer ">
   <div class="container">
     <div class="row pt-4 pb-4">
-        <div class="col-lg-3 col-md-5 col-sm-5 col-6 pt-2">
+        <div class="col-lg-3 col-md-5 col-sm-5 col-12 pt-2">
           <img src="/assets/photo/email.svg"width="205" height="28" alt="#">
       </div>
-      <div class="col-lg-3 col-md-5 pt-2 col-sm-5 col-6 ">
+      <div class="col-lg-3 col-md-5 pt-2 col-sm-5 col-12 ">
       <img src="/assets/photo/phone.svg" width="205" height="28" alt="#"> 
     </div>
-      <div class="col-lg-5 col-md-1 col-sm-1 col-5">
+      <div class="col-lg-5 col-md-1 col-sm-1 col-2">
         <img src="/assets/photo/telegram_logo_icon_147228 1.svg" class = "rounded float-end"id="footer_telegnvk"  alt="#">
         
       </div>
-      <div class="col-lg-1 col-md-1 col-sm-1 col-5">
+      <div class="col-lg-1 col-md-1 col-sm-1 col-2">
          <img src="/assets/photo/vk_icon-icons 1.svg"class = "rounded float-end" id="footer_telegnvk" alt="#">
       </div>
     </div><!--Row-->
