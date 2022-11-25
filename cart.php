@@ -12,7 +12,7 @@
     <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/fontello.css">
     <script src="js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/cart.css">
     <?php require './php/configDB.php'?>
 
 </head>
@@ -81,16 +81,48 @@
         </div> <!-- Container -->
 
     </nav> <!-- Navigtaion -->
-    <div class="container">
+    <div class="container" style="margin-top: 200px">
 
         <?php
-
+            $cart = $pdo->query('SELECT cart FROM user WHERE id = '.$_COOKIE["id"].'')->fetch(PDO::FETCH_OBJ)->cart;
+            if($cart == NULL){
+                echo '
+                    <div class="container mt-5 p-2 pt-5 text-center" style="background: #cccccc; border-radius:20px">
+                        <img src="/assets/photo/empty_cart.svg" style="width: 96px; height: 96px">
+                        <p class="h1 m-5" style="color: #555555">Корзина пуста...</p>
+                    </div>
+                ';
+            }
+            else{
+                $cart = json_decode($cart);
+                foreach($cart as $cart){
+                    $laptop = $pdo->query('SELECT * FROM laptop WHERE id = '.$cart.'')->fetch(PDO::FETCH_OBJ);
+                    echo '
+                    <div class="container">
+                        <div class="row mt-5 p-3 text-center laptop" style="border-radius:20px">
+                            <img src="'.$laptop->picture.'" class="col" style="width: 154px; height:154px;">
+                            <div class="col-sm-7">
+                                <div class="align-self-start" style="font-weight: 600">'.$laptop->name.'</div>
+                                <div class="row font-weight-normal">'.$laptop->description.'</div>
+                            </div>
+                            <div class="col align-self-center">
+                                <button class="col align-self-center btn btn-primary btn-sm btn-dark" style="font-size: clamp(20px, 5vw, 30px)">Заказать</button>
+                                <button class="col favorite-tip">
+                                    <img src="/assets/photo/favorite-tip.svg" alt="favorite" >
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    ';
+                }
+            }
         ?>
+        
+
+    </div>
 
 
-
-
-        <footer class="container-fluid footer ">
+        <footer class="container-fluid footer">
             <div class="container">
                 <div class="row pt-5">
                     <div class="col-lg-3 col-md-5 col-sm-5 col-6 pt-2">

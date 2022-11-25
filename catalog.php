@@ -151,7 +151,7 @@
                                 <div class="order-text" >от '.$row->price.'₽/сут.</div>
                                 <button class="button">Заказать</button>
                                 <button class="favorite-tip">
-                                    <img src="/assets/photo/favorite-tip.sv" alt="favorite">
+                                    <img src="/assets/photo/favorite-tip.svg" alt="favorite">
                                 </button>
                             </div>
                         </ul>

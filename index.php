@@ -182,7 +182,7 @@
     <!--Container about_us-->
 
 
-    <footer class="container-fluid footer ">
+    <footer class="container-fluid footer">
         <div class="container">
             <div class="row pt-5">
                 <div class="col-lg-3 col-md-5 col-sm-5 col-6 pt-2">
