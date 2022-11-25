@@ -335,6 +335,19 @@ body{
 .card_picture{
     margin-right: 20px;
 }
+.block_adress{
+    margin-top: 25px;
+    display: inline-flex;
+    border-radius: 10px;
+    padding: 5px 15px;
+    background-color:#BFBFBF;
+}
+.places{
+    margin:auto;
+}
+.place_picture{
+    margin-right: 20px;
+}
 /* общий класс для расположения в строку */
 .inline {
     display: inline-block;
