@@ -33,8 +33,7 @@
             </button>
             <!--Все что описано в button и сам button - это создание бургера(бургер это кнопка которая создает выпадающий список)-->
             <div class="collapse navbar-collapse pt-lg-2 pt-md-2" id="navbarSupportedContent">
-                <!--Класс, в котором у нас будут располагаться элементы навбара в самом 
-        бургере-->
+                <!--Класс, в котором у нас будут располагаться элементы навбара в самом бургере-->
                 <ul class="navbar-nav me-auto ms-auto">
                     <!--Создаем список -->
                     <li class="nav-item">
@@ -173,7 +172,7 @@
                                         <div id="tab_02" class="tabs__block lolp">
                                             <div class="block_laptop">
                                                 <!-- <div class="row">
-                          <div class="col-md-3 col-sm-3 col-xs-3"> -->
+                                                  <div class="col-md-3 col-sm-3 col-xs-3"> -->
                                                 <div class="for-small-screens_laptop">
                                                     <div class="laptop_picture inline" id="personal_laptop_picture">
                                                         <img src="/assets/photo/personal_picture_laptop.svg" alt="#">
@@ -189,7 +188,7 @@
                                                         </div>
                                                     </div>
                                                     <!-- </div>
-                        </div> -->
+                                                  </div> -->
                                                 </div>
                                             </div>
                                         </div>
