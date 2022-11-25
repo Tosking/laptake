@@ -10,9 +10,11 @@
     --colorBalanceP: #FFFFFF; /*Цвет текста баланса*/ 
     --colorButtonPromo:#FC6C33;
 }
-
+html{
+    max-width: 100%;
+}
 body{
-    
+    font-size:18px;
     background: #4c4c4c;
     background: -moz-linear-gradient(-45deg,  var(--colorBack) 0%, var(--colorBack) 100%);
     background: -webkit-linear-gradient(-45deg,  var(--colorBack) 0%,var(--colorBack) 100%);
@@ -25,8 +27,7 @@ body{
 }
 /*Navigation*/
 .navbar{
-    
-    box-sizing: border-box;
+  
     font-size: 18px;
     border-bottom: 2px solid black;
     background-color:var(--colorHead);
@@ -64,22 +65,8 @@ body{
 }
 /*Медиазапрос. Нужен для того, чтобы на конкретном разрешении внести изменеия в класс
 т.е адаптация */
-@media (max-width: 992px)
-{
-    .navbar{
-        text-align: center;
-    }
-    .balance{
-        margin-left:auto;
-        margin-right:auto;
-    }
-    .balance_text{
-        margin: auto;
-    }
-    
-    
-    
-}
+
+
 @media(max-width:1200px)
 {
     .navbar{
@@ -89,7 +76,9 @@ body{
         width:35px;
         height:35px;
     }
+    
 }
+
 .nav-link:hover{
     font-weight: 600;
     color:var(--colorLink);
@@ -150,7 +139,7 @@ body{
     margin-top:100px;
     min-height: 460px;
     margin-bottom: 150px;
-
+    
 }
 .btn{
     
@@ -161,10 +150,9 @@ body{
     
     text-align:center;
     line-height: 37px;
-    font-size:30px;
+    font-size: clamp(16px, 5vw, 30px);
     border-radius: 28px;
-    min-width:409px;
-    height: 56px;
+    min-height: 56px;
     transition: .3s ease-in-out;
 }
 
@@ -199,16 +187,18 @@ body{
     word-break:break-all;
     margin:0 auto;
     letter-spacing:1px;
-    font-size:40px;
+    font-size: clamp(25px, 7vw, 40px);
     font-weight: 900;
     line-height: 48px;
 }
 .text_about_us_header{
+    font-size:clamp(20px, 4vw, 24px);
     font-weight: bold;
     word-break:break-all;
 }
 .text_about_us_paragraph{
-    font-size:19px;
+
+    font-size: clamp(12px, 4vw, 18px);
 }
 #center_text_second{
     padding-top:20px;
@@ -216,13 +206,16 @@ body{
     word-break:break-all; /*Перенос строки*/
     margin:0 auto; /*обнуляем отступ параграфа, т.к в html он имеет базовый отступ*/
     font-weight: 400;
-    font-size:24px;
+
+    font-size: clamp(16px, 4vw, 24px);
     line-height: 48px;
 }
 /*Подвал сайта(еще в разработке)*/
 .footer{
-    min-height: 120px;
-    border-top:2px solid black ;
+    
+    bottom:0;
+    left:0;
+    border-top:2px solid black;
     background-color: var(--colorFooter);
 }
 #footer_telegnvk{
