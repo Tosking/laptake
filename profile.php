@@ -57,18 +57,18 @@
                 <!--Контейнер для создания иконки баланса-->
 
 
-                <!-- <?php 
-          if(isset($_COOKIE['id'])) {
-            echo '<div class="d-lg-flex flex-row">
-            <span class="balance_text navbar-text me-3">Баланс</span>
-            <div class="block_balance me-3 text-center">';
-            echo '<span class="balance_parag">';
-            echo $pdo->query("SELECT * FROM user WHERE id = ".$_COOKIE["id"]."")->fetch(PDO::FETCH_OBJ)->balance." ₽";
-            echo '</span>
-            </div>
-            </div>';
-          }
-        ?> -->
+                    <?php 
+                        if(isset($_COOKIE['id'])) {
+                            echo '<div class="d-lg-flex flex-row">
+                            <span class="balance_text navbar-text me-3">Баланс</span>
+                            <div class="block_balance me-3 text-center">';
+                            echo '<span class="balance_parag">';
+                            echo $pdo->query("SELECT * FROM user WHERE id = ".$_COOKIE["id"]."")->fetch(PDO::FETCH_OBJ)->balance." ₽";
+                            echo '</span>
+                            </div>
+                            </div>';
+                        }
+                    ?>
 
                 <a class="lk-and-trash me-3" href="/auth.php"><img src="/assets/photo/Иконка ЛК.svg" alt="#" width="45"
                         height="45"></a>
@@ -86,10 +86,20 @@
                 <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
                     <div class="tab_photo">
                         <div class="photo">
-                            <div class="profile_picture"><img width="164" height="164"
-                                    src="/assets/photo/profile_picture.svg" alt="#"></div>
+                            <div class="profile_picture">
+                                <?php
+                                    $pic = $pdo->query('SELECT picture FROM user WHERE id = '.$_COOKIE["id"].'')->fetch(PDO::FETCH_OBJ)->picture;
+                                    if($pic == NULL){
+                                        echo '<img width="164" height="164" src="/assets/photo/default_profile.jpeg" alt="#" style="border-radius: 50%">';
+                                    }
+                                    else{
+                                        echo '<img width="164" height="164" src="'.$pic.'" alt="#" style="border-radius: 50%">';
+                                    }
+                                ?>
+                            </div>
                         </div>
-                        <div id="nickname" class="fullname"> Вовчик Прикольчик</div>
+                        <div id="nickname" class="fullname"><?php $name = $pdo->query('SELECT * FROM user WHERE id ='.$_COOKIE["id"].'')->fetch(PDO::FETCH_OBJ);
+                         echo $name->name.' '; echo $name->surname; ?></div>
                         <div class="all_button">
                             <button type="button" class="button_settings"><img src="/assets/photo/settings.svg" alt="#"
                                     width="30" height="30"></button>
@@ -126,12 +136,27 @@
                                                 <!-- заполняем первый блок вкладки -->
                                                 <div class="tab_01_blocks">
                                                     <!-- блок почты -->
+                                                    <?php
+                                                    $info = $pdo->query('SELECT * FROM user WHERE id ='.$_COOKIE["id"].'')->fetch(PDO::FETCH_OBJ);
+                                                    $phone = "///";
+                                                    $address = "///";
+                                                    $card = "///";
+                                                    if($info->phone != NULL){
+                                                        $phone = $info->phone;
+                                                    }
+                                                    if($info->card != NULL){
+                                                        $card = $info->card;
+                                                    }
+                                                    if($info->address != NULL){
+                                                        $address = $info->address;
+                                                    }
+                                                    echo'
                                                     <div class="tab_mail">
                                                         <div class="block_mail">
                                                             <div class="mail_picture inline"><img
                                                                     src="/assets/photo/picture_mail.svg" alt="#"></div>
                                                             <div class="mail" id="personal_mail">
-                                                                mailll@mail.ru
+                                                                '.$info->email.'
                                                             </div>
                                                         </div>
                                                         <!-- кнопка редактирования всего -->
@@ -142,7 +167,7 @@
                                                             <div class="phone_picture inline"><img
                                                                     src="/assets/photo/picture_phone.svg" alt="#"></div>
                                                             <div class="phone" id="personal_phone">
-                                                                +7(922)420-25-40
+                                                                '.$phone.'
                                                             </div>
                                                         </div>
                                                     </div>
@@ -153,7 +178,7 @@
                                                                     src="/assets/photo/picture_card.svg" alt="#"
                                                                     width="35" height="35"></div>
                                                             <div class="cards" id="personal_card">
-                                                                1234 5678 9012 3456
+                                                                '.$card.'
                                                             </div>
                                                         </div>
                                                     </div>
@@ -162,9 +187,10 @@
                                                             <div class="place_picture inline"><img
                                                                     src="/assets/photo/place.svg" alt="#" width="35"
                                                                     height="35"></div>
-                                                            <div class="places">Мира 30/1, кв 36</div>
+                                                            <div class="places">'.$address.'</div>
                                                         </div>
                                                     </div>
+                                                    ';?>
                                                 </div>
                                             </div>
                                         </div>
@@ -173,20 +199,34 @@
                                             <div class="block_laptop">
                                                 <!-- <div class="row">
                                                   <div class="col-md-3 col-sm-3 col-xs-3"> -->
-                                                <div class="for-small-screens_laptop">
-                                                    <div class="laptop_picture inline" id="personal_laptop_picture">
-                                                        <img src="/assets/photo/personal_picture_laptop.svg" alt="#">
-                                                    </div>
-                                                    <!-- </div> -->
-                                                    <!-- <div class="col-md-9 col-sm-9 col-xs-9"> -->
-                                                    <div class="describing_laptop inline">
-                                                        <div class="name_laptop" id="personal_name_laptop">
-                                                            <strong>ASER Nitro 5</strong>
-                                                        </div>
-                                                        <div class="parameter_laptop" id="personal_parameter_laptop">
-                                                            Intel i5 (10G)/16gb/SSD GeForce 1050ti — 4gb
-                                                        </div>
-                                                    </div>
+                                                <?php
+                                                    $favorite = $pdo->query('SELECT favorite FROM user WHERE id ='.$_COOKIE["id"].'')->fetch(PDO::FETCH_OBJ)->favorite;
+                                                    if($favorite == NULL){
+                                                        echo '<div class="container mt-2 p-2 pt-2 text-center" style="background: #cccccc; border-radius:20px">
+                                                            <div class="h1 m-5" style="color: #555555; font-size: clamp(10px, 5vw, 30px)">В избранном пока пусто</p>
+                                                        </div>';
+                                                    }
+                                                    else{
+                                                        $favorite = json_decode($favorite);
+                                                        foreach($favorite as $favorite){
+                                                            $laptop = $pdo->query('SELECT * FROM laptop WHERE id = '.$favorite.'')->fetch(PDO::FETCH_OBJ);
+                                                            echo '
+                                                            <div class="container">
+                                                                <div class="row mt-1 p-3 text-center laptop" style="border-radius:20px; background-color: #cccccc">
+                                                                    <img src="'.$laptop->picture.'" class="col" style="width: 154px; height:154px;">
+                                                                    <div class="col-sm-7">
+                                                                        <div class="align-self-start" style="font-weight: 600">'.$laptop->name.'</div>
+                                                                        <div class="row font-weight-normal">'.$laptop->description.'</div>
+                                                                    </div>
+                                                                    <div class="col align-self-center">
+                                                                        <button class="col align-self-center btn btn-primary btn-sm btn-dark" style="font-size: clamp(20px, 5vw, 30px); border-radius:20px">Заказать</button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            ';
+                                                        }
+                                                    }
+                                                    ?>
                                                     <!-- </div>
                                                   </div> -->
                                                 </div>
@@ -197,45 +237,53 @@
                                             <!-- <div class="container"> -->
                                             <div class="block_laptop">
                                                 <div class="row for-small-screens_laptop">
-                                                    <!-- колонка под фото ноутбука-->
-                                                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                                                        <div class="laptop_picture inline" id="personal_laptop_picture">
-                                                            <img src="/assets/photo/personal_picture_laptop.svg"
-                                                                alt="#">
-                                                        </div>
-                                                    </div>
-                                                    <!-- колонка под описание ноутбука -->
-                                                    <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-                                                        <div class="name_laptop" id="personal_name_laptop">
-                                                            <strong>ASER Nitro 5</strong>
-                                                        </div>
-                                                        <div class="parameter_laptop" id="personal_parameter_laptop">
-                                                            Intel i5 (10G)/16gb/SSD GeForce 1050ti — 4gb
-                                                        </div>
-                                                        <div class="describing_laptop_down">
-                                                            <div class="rent_dates">
-                                                                <div class="text_rent_dates inline">дата аренды:</div>
-                                                                <div class="start_rent_date inline"
-                                                                    id="personal_start_rent_date">
-                                                                    13.05.2022
-                                                                </div>
-                                                                <div class="minus inline">-</div>
-                                                                <div class="end_rent_date inline"
-                                                                    id="personal_end_rent_date">
-                                                                    13.05.2022
-                                                                </div>
-                                                            </div>
-                                                            <div class="payments_amount ">
-                                                                <div class="text_payment_amount inline">сумма оплаты:
-                                                                </div>
-                                                                <div class="payment_amount inline"
-                                                                    id="personal_payment_amount inline">
-                                                                    2000
-                                                                </div>
-                                                                <div class="ruble inline">₽</div>
+                                                        <?php
+                                                        $history = $pdo->query('SELECT * FROM renting WHERE user = '.$_COOKIE["id"].'');
+                                                        while($row = $history->fetch(PDO::FETCH_OBJ)){
+                                                            $copy = $pdo->query('SELECT model FROM copy WHERE id = '.$row->copy.'')->fetch(PDO::FETCH_OBJ);
+                                                            $laptop = $pdo->query('SELECT * FROM laptop WHERE id = '.$copy->model.'')->fetch(PDO::FETCH_OBJ);
+                                                            $payment = $pdo->query('SELECT value FROM payments WHERE id = '.$row->payment_id.'')->fetch(PDO::FETCH_OBJ);
+                                                            echo'
+                                                            <!-- колонка под фото ноутбука-->
+                                                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                                            <div class="laptop_picture inline" id="personal_laptop_picture">
+                                                                <img src="'.$laptop->picture.'"
+                                                                    alt="#" style="height: 154px; width: 154px">
                                                             </div>
                                                         </div>
-                                                    </div>
+                                                        <!-- колонка под описание ноутбука -->
+                                                        <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                                                            <div class="name_laptop" id="personal_name_laptop">
+                                                                <strong>'.$laptop->name.'</strong>
+                                                            </div>
+                                                            <div class="parameter_laptop" id="personal_parameter_laptop">
+                                                                '.$laptop->description.'
+                                                            </div>
+                                                            <div class="describing_laptop_down">
+                                                                <div class="rent_dates">
+                                                                    <div class="text_rent_dates inline">Дата аренды:</div>
+                                                                    <div class="start_rent_date inline"
+                                                                        id="personal_start_rent_date">
+                                                                        '.$row->start.'
+                                                                    </div>
+                                                                    <div class="minus inline">-</div>
+                                                                    <div class="end_rent_date inline"
+                                                                        id="personal_end_rent_date">
+                                                                        '.$row->end.'
+                                                                    </div>
+                                                                </div>
+                                                                <div class="payments_amount ">
+                                                                    <div class="text_payment_amount inline">сумма оплаты:
+                                                                    </div>
+                                                                    <div class="payment_amount inline"
+                                                                        id="personal_payment_amount inline">
+                                                                        '.$payment->value.'
+                                                                    </div>
+                                                                    <div class="ruble inline">₽</div>   
+                                                                </div>
+                                                            </div>
+                                                        </div>';
+                                                        }?>                                                   
                                                 </div>
                                             </div>
                                             <!-- </div> -->

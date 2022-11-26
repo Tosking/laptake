@@ -79,6 +79,35 @@ body{
     background: var(--colorLink);
     transition: width 0.3s ease 0s, left 0.3s ease 0s;
 }
+
+.block_balance{
+    padding:8px 0;
+    width:130px;
+    height: 45px;
+    border-radius: 9%;
+    background-color:#000000;
+    
+}
+
+.balance_parag{
+    font-size:19px;
+    color: var(--colorBalanceP);
+    letter-spacing: 0.12em;
+    font-weight: 900;
+}
+.balance_text{
+    font-weight:900;
+    font-style: normal;
+    line-height: 24px;
+    letter-spacing: 0.12em;
+    color:#000000;
+}
+
+.btn:hover{
+    background-color: #FC6C33; 
+    color: #000000;
+}
+
 .nav-link:hover{
     font-weight: 650;
     color:#FC6C33;
@@ -397,8 +426,9 @@ button{
     transition: .2s ease-in-out;
 }
 
-button:hover{
-    background-color: #FC6C33;
+.button:hover {
+	background-color: #FC6C33;
+	box-shadow:0 0 20px #FC6C33;
 }
 @media(max-width:767px) {
     .for-small-screens_laptop {
