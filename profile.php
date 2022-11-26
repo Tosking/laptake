@@ -72,7 +72,7 @@
 
                 <a class="lk-and-trash me-3" href="/auth.php"><img src="/assets/photo/Иконка ЛК.svg" alt="#" width="45"
                         height="45"></a>
-                <a class="lk-and-trash " href="#"><img src="/assets/photo/Иконка корзины.svg" alt="#" width="45"
+                <a class="lk-and-trash " href="/cart.php"><img src="/assets/photo/Иконка корзины.svg" alt="#" width="45"
                         height="45"></a>
 
 
