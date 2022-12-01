@@ -15,12 +15,10 @@ body{
     background: -webkit-linear-gradient(-45deg,  var(--colorBack) 0%,var(--colorBack) 100%);
     background: linear-gradient(135deg,  var(--colorBack) 0%,var(--colorBack) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', endColorstr='#969696',GradientType=1 );
-
     box-sizing: border-box;
     margin: 0;
     font-family: 'Montserrat',sans-serif; /*В данной строке прописывается шрифт, который будет использоваться на всей странице*/
 }
-
 .main {
     padding-top: 180px;
     background-size: cover;
@@ -29,7 +27,6 @@ body{
     display: flex;
     flex-direction: column;
 }
-
 @media(max-width:520px) {
     .for-large-screens {
       display:none;
@@ -41,7 +38,6 @@ body{
       display:none;
     }
   }
-
 /*Navigation*/
 .navbar{
     
@@ -76,41 +72,41 @@ body{
     background: none repeat scroll 0 0 transparent;
     height: 2px;
     width: 0;
-    background: var(--colorLink);
-    transition: width 0.3s ease 0s, left 0.3s ease 0s;
-}
+     background: var(--colorLink);
+     transition: width 0.3s ease 0s, left 0.3s ease 0s;
+ }
 
-.block_balance{
-    padding:8px 0;
-    width:130px;
-    height: 45px;
-    border-radius: 9%;
-    background-color:#000000;
-    
-}
+ .block_balance{
+     padding:8px 0;
+     width:130px;
+     height: 45px;
+     border-radius: 9%;
+     background-color:#000000;
 
-.balance_parag{
-    font-size:19px;
-    color: var(--colorBalanceP);
-    letter-spacing: 0.12em;
-    font-weight: 900;
-}
-.balance_text{
-    font-weight:900;
-    font-style: normal;
-    line-height: 24px;
-    letter-spacing: 0.12em;
-    color:#000000;
-}
+ }
 
-.btn:hover{
-    background-color: #FC6C33; 
-    color: #000000;
-}
+ .balance_parag{
+     font-size:19px;
+     color: var(--colorBalanceP);
+     letter-spacing: 0.12em;
+     font-weight: 900;
+ }
+ .balance_text{
+     font-weight:900;
+     font-style: normal;
+     line-height: 24px;
+     letter-spacing: 0.12em;
+     color:#000000;
+ }
 
-.nav-link:hover{
-    font-weight: 650;
-    color:#FC6C33;
+ .btn:hover{
+     background-color: #FC6C33; 
+     color: #000000;
+ }
+
+ .nav-link:hover{
+     font-weight: 650;
+     color:#FC6C33;
 }
  .nav-link:hover::after{
  
@@ -128,7 +124,6 @@ body{
     border-radius: 10%;
     background-color:#000000;
 }
-
 .balance_comm{
     padding: 0 10px 0 0;
     margin:0;   
@@ -143,12 +138,10 @@ body{
     letter-spacing: 3px;
     font-weight: 900;
 }
-
 /*Личный кабинет и корзина*/
 .lk-and-trash{
     margin-left: 12px;
 }
-
 .photo{
     background-color: var(--colorFooter);
     width: 170px;
@@ -157,14 +150,12 @@ body{
     margin-left: auto;
     margin-right: auto;
 }
-
 .profile_picture{
     padding-top: 3px;
     margin-left: auto;
     margin-right: auto;
     padding-left: 3px;
 }
-
 .tab_photo{
     width: 210px;
     min-height: 300px;
@@ -175,8 +166,6 @@ body{
     margin-right: auto;
     margin-bottom: 30px;
 }
-
-
 .fullname{
     text-align: center;
     padding-top: 10px;
@@ -184,7 +173,6 @@ body{
     font-size: 24px;
     overflow-wrap: break-word;
 }
-
 /*Content(позже добавлю)*/
 .content{
     background-size: contain;
@@ -210,20 +198,17 @@ body{
     font-weight: 400;
     font-size:24px;
     line-height: 48px;
-
 }
 /*Подвал сайта(еще в разработке*/
 .footer{
     border-top:2px solid black ;
     background-color: var(--colorFooter);
 }
-
 .wrapper {
 	min-height: 100%;
 	position:relative;
 	overflow: hidden;
 }
-
 .content {
 	max-width: 1000px;
 	margin: 0px auto;
@@ -250,12 +235,6 @@ body{
 }
 .laptop_picture{
     background-size: cover;
-    text-align: center; 
-    padding-right: auto;
-    padding-left: auto;
-    margin-right: auto;
-    margin-left: auto;
-
 }
 .tabs__item:hover{
     color: #FC6C33;
@@ -266,7 +245,6 @@ body{
 .tabs__item:nth-child(3){
     border-radius: 0 10px 0 0;
 }
-
 /* расположение названий вкладок */
 .tabs__item span {
 	position: relative;
@@ -281,9 +259,7 @@ body{
     border-radius: 0 0 10px 10px;
     display: none;
     background-color: #D9D9D9;
-
 }
-
 /* .tabs__block:nth-child(1){
     background-color: #E1E1E1;
     display: none;
@@ -309,7 +285,6 @@ body{
     border-left: 1px solid #AEAEAE;
     border-top: 1px solid #AEAEAE; */
 }
-
 .tabs__block:nth-child(1):before {
     left: 0;
     border-radius: 10px 0 0 0;
@@ -321,7 +296,6 @@ body{
     right: 0;
     border-radius: 0 10px 0 0;
 }
-
 .tabs__block:target {
 	display: block;
 }
@@ -404,7 +378,6 @@ body{
     position: relative; 
     padding-top: 20px;
 }
-
 .all_button{
     display: inline;
     position: relative;
@@ -430,15 +403,17 @@ button{
     text-decoration: none;
     background-color: #000000;
     /* box-shadow: 6px 6px 4px rgba(0, 0, 0, 0.25); */
-    transition: .2s ease-in-out;
-}
+     transition: .2s ease-in-out;
+ }
 
-.button:hover {
-	background-color: #FC6C33;
-	box-shadow:0 0 20px #FC6C33;
-}
-@media(max-width:767px) {
-    .for-small-screens_laptop {
+ button:hover{
+     background-color: #FC6C33;
+ .button:hover {
+ 	background-color: #FC6C33;
+ 	box-shadow:0 0 20px #FC6C33;
+ }
+ @media(max-width:767px) {
+     .for-small-screens_laptop {
         text-align: center; 
     }
     .name_laptop{
