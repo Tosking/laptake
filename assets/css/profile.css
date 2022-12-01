@@ -221,6 +221,12 @@ body{
 }
 .laptop_picture{
     background-size: cover;
+    text-align: center; 
+    padding-right: auto;
+    padding-left: auto;
+    margin-right: auto;
+    margin-left: auto;
+
 }
 .tabs__item:hover{
     color: #FC6C33;
@@ -248,6 +254,7 @@ body{
     background-color: #D9D9D9;
 
 }
+
 /* .tabs__block:nth-child(1){
     background-color: #E1E1E1;
     display: none;
@@ -403,7 +410,6 @@ button:hover{
 @media(max-width:767px) {
     .for-small-screens_laptop {
         text-align: center; 
-
     }
     .name_laptop{
         font-size: large;
