@@ -17,9 +17,9 @@
 <body>
 
     <!--Это нужно для того чтобы наш навбар был фиксированным и не сворачивался на странице-->
-    <nav class="navbar  navbar-expand-lg fixed-top">
+    <nav class="navbar  navbar-expand-xl fixed-top">
         <!--Создаем сам навбар-->
-        <div class="container-lg container-md">
+        <div class="container">
             <!--Создаем контейнер с нужными нам отступами-->
             <a class="navbar-brand m-0" href="/">
                 <img src="/assets/photo/logo.svg" alt="#">
@@ -32,7 +32,7 @@
                 <!--Дефолтная иконка бургера-->
             </button>
             <!--Все что описано в button и сам button - это создание бургера(бургер это кнопка которая создает выпадающий список)-->
-            <div class="collapse navbar-collapse pt-lg-2 pt-md-2" id="navbarSupportedContent">
+            <div class="collapse navbar-collapse pt-lg-2 pt-md-2 text-center" id="navbarSupportedContent">
                 <!--Класс, в котором у нас будут располагаться элементы навбара в самом бургере-->
                 <ul class="navbar-nav me-auto ms-auto">
                     <!--Создаем список -->
@@ -59,7 +59,7 @@
 
                 <?php 
                   if(isset($_COOKIE['id'])) {
-                    echo '<div class="d-lg-flex flex-row">
+                    echo '<div class="d-inline-flex balance pt-1">
                     <span class="balance_text navbar-text me-3">Баланс</span>
                     <div class="block_balance me-3 text-center">';
                     echo '<span class="balance_parag">';
@@ -69,12 +69,12 @@
                     </div>';
                   }
                 ?>
-
+                <div class="d-inline-flex pt-1">
                 <a class="lk-and-trash me-3" href="<?php if(isset($_COOKIE["id"])) echo '/profile.php#tab_01'; else echo '/auth.php';?>"><img src="/assets/photo/Иконка ЛК.svg" alt="#" width="45"
                         height="45"></a>
                 <a class="lk-and-trash " href="/cart.php"><img src="/assets/photo/Иконка корзины.svg" alt="#" width="45"
                         height="45"></a>
-
+                </div>
 
             </div> <!-- collapse navbar-collapse -->
         </div> <!-- Container -->
@@ -104,7 +104,7 @@
         <div class="col-md-12 col-sm-12 col-lg-6">
           <div class="block_about_us">
             <div class="d-flex flex-row pt-4 pb-4 ps-3 pe-3">
-            <div class="col-md-3 col-lg-3 col-sm-3 col-3">
+            <div class="col-md-3 col-lg-3 col-sm-3 col-4">
             <img src="/assets/photo/delivery.svg" id="img_about_us" alt="#">
           </div>
           <div class="col-md-7 col-lg-9 pt-2 pt-lg-1">
@@ -118,7 +118,7 @@
           <div class="col-md-12 col-sm-12 col-lg-6">
             <div class="block_about_us">
               <div class="d-flex flex-row pt-4 pb-4 ps-3 pe-3">
-                <div class="col-md-3 col-lg-3 col-sm-3 col-3">
+                <div class="col-md-3 col-lg-3 col-sm-3 col-4">
                   <img src="/assets/photo/quality.svg" id="img_about_us" alt="#">
                 </div>
 
@@ -134,11 +134,11 @@
             <div class="block_about_us">
             <div class="d-flex flex-row pt-3 pb-4  ps-3 pe-3">
 
-            <div class="col-md-3 col-lg-3 col-sm-3 col-3"> 
+            <div class="col-md-3 col-lg-3 col-sm-3 col-4"> 
               <img src="/assets/photo/service.svg" id="img_about_us"  alt="#">
             </div>
 
-            <div class="col-md-9 col-lg-9 col-sm-9 pt-2 pt-lg-1">
+            <div class="col-md-9 col-lg-9 col-sm-9 pt-2 pt-lg-1 col-9">
               <h4 class=" text_about_us_header"> Мы все починим!</h4>
            <p class="text_about_us_paragraph"> В случае неисправности, вы всегда можете обратиться к нам и поменять ноутбук</p>
 
@@ -150,7 +150,7 @@
               <div class="block_about_us">
                 <div class="d-flex flex-row pt-4 pb-4 ps-3 pe-3">
 
-                <div class="col-md-3 col-lg-3 col-sm-3 col-3">
+                <div class="col-md-3 col-lg-3 col-sm-3 col-4">
                    <img src="/assets/photo/comunication.svg" id="img_about_us" alt="#">
                 </div>
 
@@ -161,25 +161,26 @@
                 </div> <!--Row-->
               </div> <!--about_us-->
               </div> <!--columns-md-12-->
+              
     </section>
   </div><!--Container about_us-->
 
 
-  <footer class = "container-fluid footer ">
+  <footer class = "container-fluid footer">
   <div class="container">
     <div class="row pt-4 pb-4">
-        <div class="col-lg-3 col-md-5 col-sm-5 col-12 pt-2">
-          <img src="/assets/photo/email.svg"width="205" height="28" alt="#">
+        <div class="col-lg-3 col-md-5 col-sm-12 col-12 pt-2 ">
+          <img src="/assets/photo/email.svg"  width="205" height="28" alt="#">
       </div>
-      <div class="col-lg-3 col-md-5 pt-2 col-sm-5 col-12 ">
-      <img src="/assets/photo/phone.svg" width="205" height="28" alt="#"> 
+      <div class="col-lg-3 col-md-5 pt-2 col-sm-12 col-12 ">
+      <img src="/assets/photo/phone.svg"  width="205" height="28"alt="#"> 
     </div>
-      <div class="col-lg-5 col-md-1 col-sm-1 col-2">
-        <img src="/assets/photo/telegram_logo_icon_147228 1.svg" class = "rounded float-end"id="footer_telegnvk"  alt="#">
+      <div class="telegvk col-lg-5 col-md-1 col-sm-12 col-12">
+        <img src="/assets/photo/telegram_logo_icon_147228 1.svg" id="footer_telegnvk"  alt="#">
         
       </div>
-      <div class="col-lg-1 col-md-1 col-sm-1 col-2">
-         <img src="/assets/photo/vk_icon-icons 1.svg"class = "rounded float-end" id="footer_telegnvk" alt="#">
+      <div class="telegvk col-lg-1 col-md-1 col-sm-12 col-12">
+         <img src="/assets/photo/vk_icon-icons 1.svg"id="footer_telegnvk" alt="#">
       </div>
     </div><!--Row-->
   </div><!--Container-->
