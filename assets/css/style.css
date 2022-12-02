@@ -154,7 +154,7 @@ body{
     margin-bottom: 150px;
     
 }
-.btn{
+.btnpromo{
     
     text-decoration: none;
     background-color: #000000;
@@ -169,7 +169,7 @@ body{
     transition: .3s ease-in-out;
 }
 
-.btn:hover{
+.btnpromo:hover{
     background-color: var(--colorButtonPromo); 
     color: #000000;
 }

@@ -25,14 +25,13 @@
                 <img src="/assets/photo/logo.svg" alt="#">
             </a>
             <!--Затем используем специальный класс для логотипов компаний или организаций-->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-                <!--Дефолтная иконка бургера-->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+            data-bs-target="#navbarNav" aria-controls="navbarNav" 
+            aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"><img src="/assets/photo/gamburger.png" width="30" height="30" alt=""></span>
             </button>
             <!--Все что описано в button и сам button - это создание бургера(бургер это кнопка которая создает выпадающий список)-->
-            <div class="collapse navbar-collapse pt-lg-2 pt-md-2 text-center" id="navbarSupportedContent">
+            <div class="collapse navbar-collapse pt-lg-2 pt-md-2 text-center" id="navbarNav">
                 <!--Класс, в котором у нас будут располагаться элементы навбара в самом бургере-->
                 <ul class="navbar-nav me-auto ms-auto">
                     <!--Создаем список -->
@@ -89,7 +88,7 @@
         <h1 id = "center_text_first">Дарим возможность</h1>
         <p id = "center_text_second">Готовый к использованию ноутбук с<br> доставкой на дом </p>
          </div>
-         <button type="button" class="btn"><strong>Заказать в один клик</strong></button>
+         <button type="button" class="btn btnpromo"><strong>Заказать в один клик</strong></button>
       </div>
       <div class="col-md-6 col-sm-12 col-lg-6">
         <div class="block"><img src="/assets/photo/back.svg" alt="#" class="img-fluid"></div>
