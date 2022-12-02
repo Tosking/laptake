@@ -1,23 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;900&display=swap" rel="stylesheet">
-    <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/fontello.css">
-    <link rel="stylesheet" href="/assets/css/auth.css">
-    <script src="js/bootstrap.bundle.min.js"></script>
-
-</head>
-
-<body>
-    <?php
+<?php
     /*if(isset($_COOKIE["id"])){
         header("Location: /");
     }*/
@@ -37,6 +18,7 @@
             }
             else{
                 setcookie("id", $user->id, time() + (86400 * 30 * 10), "/"); // Куки хранятся 10 дней
+                header("Location: /");
             }
         }
         else{
@@ -44,6 +26,26 @@
         }
     }
     ?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;900&display=swap" rel="stylesheet">
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/fontello.css">
+    <link rel="stylesheet" href="/assets/css/auth.css">
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+</head>
+
+<body>
+   
     <div class="position-absolute top-50 start-50 translate-middle text-center container-sm"
         style="outline: 1px solid black; border-radius: 20px; margin-top: 20px; max-width: 500px">
         <div class="mb-5 mt-5">

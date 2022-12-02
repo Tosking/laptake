@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;900&display=swap" rel="stylesheet">
     <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/fontello.css">
     <link rel="stylesheet" href="/assets/css/profile.css">
@@ -38,17 +38,17 @@
                     <!--Создаем список -->
                     <li class="nav-item">
                         <!--Создаем элементы в которых будут храниться ссылки на страницы-->
-                        <a class="nav-link" aria-current="page" href="/">Главная</a>
+                        <a class="nav-link" aria-current="page" href="/" style="font-weight: 400">Главная</a>
                         <!--Ну и сама страница-->
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/catalog.php">Каталог</a>
+                        <a class="nav-link" href="/catalog.php" style="font-weight: 400">Каталог</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">О нас</a>
+                        <a class="nav-link" href="#" style="font-weight: 400">О нас</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Оплата и доставка</a>
+                        <a class="nav-link" href="#" style="font-weight: 400">Оплата и доставка</a>
                     </li>
 
 
@@ -70,9 +70,9 @@
                         }
                     ?>
 
-                <a class="lk-and-trash me-3" href="/auth.php"><img src="/assets/photo/Иконка ЛК.svg" alt="#" width="45"
+                <a class="lk-and-trash me-3" href="/auth.php"><img src="/assets/photo/Иконка ЛК.svg" alt="<?php if(isset($_COOKIE["id"])) echo '/profile.php#tab_01'; else echo '/auth.php';?>" width="45"
                         height="45"></a>
-                <a class="lk-and-trash " href="/cart.php"><img src="/assets/photo/Иконка корзины.svg" alt="#" width="45"
+                <a class="lk-and-trash " href="/cart.php"><img src="/assets/photo/Иконка корзины.svg" alt="/cart.php" width="45"
                         height="45"></a>
 
 
@@ -83,29 +83,32 @@
     <div class="main">
         <div class="container">
             <div class="row">
-                <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
-                    <div class="tab_photo">
-                        <div class="photo">
-                            <div class="profile_picture">
-                                <?php
-                                    $pic = $pdo->query('SELECT picture FROM user WHERE id = '.$_COOKIE["id"].'')->fetch(PDO::FETCH_OBJ)->picture;
-                                    if($pic == NULL){
-                                        echo '<img width="164" height="164" src="/assets/photo/default_profile.jpeg" alt="#" style="border-radius: 50%">';
-                                    }
-                                    else{
-                                        echo '<img width="164" height="164" src="'.$pic.'" alt="#" style="border-radius: 50%">';
-                                    }
-                                ?>
-                            </div>
+                <div class="tab_photo col-lg-3 col-md-12 col-sm-12 col-xs-12">
+                    <div class="photo">
+                        <div class="profile_picture">
+                            <?php
+                                $pic = $pdo->query('SELECT picture FROM user WHERE id = '.$_COOKIE["id"].'')->fetch(PDO::FETCH_OBJ)->picture;
+                                if($pic == NULL){
+                                    echo '<img width="164" height="164" src="/assets/photo/default_profile.jpeg" alt="#" style="border-radius: 50%">';
+                                }
+                                else{
+                                    echo '<img width="164" height="164" src="'.$pic.'" alt="#" style="border-radius: 50%">';
+                                }
+                            ?>
                         </div>
-                        <div id="nickname" class="fullname"><?php $name = $pdo->query('SELECT * FROM user WHERE id ='.$_COOKIE["id"].'')->fetch(PDO::FETCH_OBJ);
-                         echo $name->name.' '; echo $name->surname; ?></div>
-                        <div class="all_button">
-                            <button type="button" class="button_settings"><img src="/assets/photo/settings.svg" alt="#"
-                                    width="30" height="30"></button>
-                            <button type="button" class="button_exit"><img src="/assets/photo/exit.svg" alt="#"
-                                    width="30" height="30"></button>
-                        </div>
+                    </div>
+                    <div id="nickname" class="fullname"><?php $name = $pdo->query('SELECT * FROM user WHERE id ='.$_COOKIE["id"].'')->fetch(PDO::FETCH_OBJ);
+                     echo $name->name.' '; echo $name->surname; ?></div>
+                    <div class="all_button">
+                        <button type="button" class="button_settings mt-3"><img src="/assets/photo/settings.svg" alt="#"
+                                width="30" height="30"></button>
+                        <button type="button" class="button_exit mt-3"><img src="/assets/photo/exit.svg" alt="#"
+                                width="30" height="30"></button>
+                        <form method="post" action="/add_balance.php">
+                            <input type="text" class="col-12 mt-3 p-1 mb-2" name="value" placeholder="₽">
+                            <div class="text-center" style="font-size: 10px">Введите значение меньше 100 тыс.</div>
+                            <button type="submit" class="col-12 mt-1 p-1 mb-2" style="color: #ffffff; font-weight:900">Пополнить баланс</button>
+                        </form>
                     </div>
                 </div>
                 <div class=" col-lg-9 col-md-12 col-sm-12 col-xs-12">
@@ -319,6 +322,7 @@
     </div><!--Row-->
   </div><!--Container-->
 </footer><!--Container-fluid footer-->
+    <script src="/assets/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/profile.js"></script>
 </body>
 

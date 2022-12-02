@@ -387,16 +387,13 @@ body{
     width: 40%;
     margin-left: 15px;
     margin-right: 6px;
-    margin-bottom: 15px;
     padding: 5px;
 }
 .button_exit{
     width: 40%;
-    margin-bottom: 15px;
     padding: 5px;
 }
 button{
-    margin-top: 25px;
     border-radius: 10px;
     border: none; 
     outline: none; 
@@ -408,6 +405,7 @@ button{
 
  button:hover{
      background-color: #FC6C33;
+ }
  .button:hover {
  	background-color: #FC6C33;
  	box-shadow:0 0 20px #FC6C33;
