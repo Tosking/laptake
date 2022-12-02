@@ -18,6 +18,7 @@
             }
             else{
                 setcookie("id", $user->id, time() + (86400 * 30 * 10), "/"); // Куки хранятся 10 дней
+                header("Location: /");
             }
         }
         else{
