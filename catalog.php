@@ -80,15 +80,40 @@
 	<section class="main mt-5">
 		<div class="container overflow-hidden text-center"  style="margin-top: 150px;">
 			<h1 class="title">Подбери свой ноутбук</h1>
-			<div class="row justify-content-center main-buttons">
-				<button type="button type" class="btn active col-6 col-sm-3" data-bs-toggle="button" aria-pressed="true"><strong>Игровой</strong></button>
-				<button type="button type" class="btn active col-6 col-sm-3" data-bs-toggle="button" aria-pressed="true"><strong>Офисный</strong></button>
-				<button type="button type" class="btn active col-6 col-sm-3" data-bs-toggle="button" aria-pressed="true"><strong>Для учебы</strong></button>
-				<button type="button type" class="btn active col-6 col-sm-3" data-bs-toggle="button" aria-pressed="true"><strong>Универсальные</strong></button>
+			<div class="main-buttons text-center">
+				<form method="get" action="/catalog.php">
+					<input type="submit" name="button" class="btn col-5 col-sm-3" value=Игровой style="font-weight:900;">
+					<input type="submit" name="button" class="btn col-5 col-sm-3" value=Офисный style="font-weight:900;">
+					<input type="submit" name="button" class="btn col-5 col-sm-3" value=Учебный style="font-weight:900;">
+					<input type="submit" name="button" class="btn col-5 col-sm-3" value=Универсальный style="font-weight:900;">
+				</form>
   		</div>
-			<h1 class="title">Мы вам рекомендуем</h1>
 			<?php
-				$laptops = $pdo->query('SELECT * FROM laptop');
+				if(isset($_GET["button"])){
+					echo '<h1 class="title">'.$_GET["button"].'</h1>';
+				}
+				else{
+					echo '<h1 class="title">Мы вам рекомендуем</h1>';
+				}
+			?>
+			<?php
+				if(isset($_GET["button"])){
+					if($_GET["button"] == "Игровой"){
+						$laptops = $pdo->query('SELECT * FROM laptop WHERE type = "игровой"');
+					}
+					if($_GET["button"] == "Офисный"){
+						$laptops = $pdo->query('SELECT * FROM laptop WHERE type = "офисный"');
+					}
+					if($_GET["button"] == "Универсальный"){
+						$laptops = $pdo->query('SELECT * FROM laptop WHERE type = "универсальный"');
+					}
+					if($_GET["button"] == "Учебный"){
+						$laptops = $pdo->query('SELECT * FROM laptop WHERE type = "учебный"');
+					}
+				}
+				else{
+					$laptops = $pdo->query('SELECT * FROM laptop');
+				}
 				while($row = $laptops->fetch(PDO::FETCH_OBJ)){
 					echo '<div class="row">
 						<div class="col-12 block-rec laptop mb-3">
