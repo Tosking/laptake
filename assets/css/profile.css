@@ -1,13 +1,4 @@
-/*Глобальные переменные*/
-:root{
-    /* Переменные, хранящие цвета сайта*/
-    --colorHead:#D9D9D9;  /* Цвет header'a*/
-    --colorBack:#AEAEAE; /*Цвет фона*/
-    --colorHeadInner:#000000;  /*Цвет текста(ссылок)*/
-    --colorLink: #FC6C33; /*Цвет полоски под ссылками в навбаре*/
-    --colorFooter: #3A3A3A;
-    --colorBalanceP: #FFFFFF; /*Цвет текста баланса*/ 
-}
+
 body{
     height: 100%;
     background: #4c4c4c;
@@ -38,110 +29,13 @@ body{
       display:none;
     }
   }
-/*Navigation*/
-.navbar{
-    
-    box-sizing: border-box;
-    font-size: 17px;
-    border-bottom: 2px solid black;
-    background-color:var(--colorHead);
-    padding-bottom: 14px;
-    margin-bottom: 100px;
-}
-/*Стилизация ссылок в навигации*/
-.navbar-nav a{
-    font-weight: 520;
-    font-style: normal;
-    transition: font-weight .2s, color .2s,  line-through .2s !important; 
-    color: var(--colorHeadInner);
-}
-.nav-link {
-    color: var(--colorLink);
-    text-decoration: none;
-    letter-spacing: 1px;
-    display: inline-block;
-    position: relative;
-  }
-.nav-link::after{
-    color:var(--colorLink);
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    display: block;
-    background: none repeat scroll 0 0 transparent;
-    height: 2px;
-    width: 0;
-     background: var(--colorLink);
-     transition: width 0.3s ease 0s, left 0.3s ease 0s;
- }
 
- .block_balance{
-     padding:8px 0;
-     width:130px;
-     height: 45px;
-     border-radius: 9%;
-     background-color:#000000;
-
- }
-
- .balance_parag{
-     font-size:19px;
-     color: var(--colorBalanceP);
-     letter-spacing: 0.12em;
-     font-weight: 900;
- }
- .balance_text{
-     font-weight:900;
-     font-style: normal;
-     line-height: 24px;
-     letter-spacing: 0.12em;
-     color:#000000;
- }
 
  .btn:hover{
      background-color: #FC6C33; 
      color: #000000;
  }
 
- .nav-link:hover{
-     font-weight: 650;
-     color:#FC6C33;
-}
- .nav-link:hover::after{
- 
-    width: 100%; 
-    left: 0; 
-}
-.nav-item{
-    margin-left:5px;
-}
-/*Стили для иконки баланса*/
-.balance{
-    
-    width: 130px;
-    height: 55px;
-    border-radius: 10%;
-    background-color:#000000;
-}
-.balance_comm{
-    padding: 0 10px 0 0;
-    margin:0;   
-    margin-top: 13px;
-    margin-bottom: 13px;
-}
-.balance_parag{
-    font-size:19px;
-    margin-top: 13px;
-    margin-bottom: 13px;
-    color: var(--colorBalanceP);
-    letter-spacing: 3px;
-    font-weight: 900;
-}
-/*Личный кабинет и корзина*/
-.lk-and-trash{
-    margin-left: 12px;
-}
 .photo{
     background-color: var(--colorFooter);
     width: 170px;

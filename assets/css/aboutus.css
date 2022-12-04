@@ -1,16 +1,4 @@
-:root{
-    /* Переменные, хранящие цвета сайта*/
-    --colorHead:#D9D9D9;  /* Цвет header'a*/
-    --colorBack:#AEAEAE; /*Цвет фона*/
-    --colorHeadInner:#000000;  /*Цвет текста(ссылок)*/
-    --colorLink: #FC6C33; /*Цвет полоски под ссылками в навбаре*/
-    --colorFooter: #3A3A3A;
-    --colorBalanceP: #FFFFFF; /*Цвет текста баланса*/ 
-    --colorButtonPromo:#FC6C33;
-}
-html{
-    max-width: 100%;
-}
+
 body{
     font-size:18px;
     background: #4c4c4c;
@@ -23,80 +11,7 @@ body{
     margin: 0;
     font-family: 'Montserrat'; /*В данной строке прописывается шрифт, который будет использоваться на всей странице*/
 }
-/*Navigation*/
-.navbar{
-  
-    font-size: 18px;
-    border-bottom: 2px solid black;
-    background-color:var(--colorHead);
-    padding-bottom: 14px;
-    
-}
 
-/*Стилизация ссылок в навигации*/
-.navbar-nav a{
-    white-space: nowrap;
-    font-weight: 400;
-    font-style: normal;
-    transition: font-weight .2s, color .2s,  line-through .2s !important; 
-    color: var(--colorHeadInner);
-}
-.nav-link {
-    color: var(--colorLink);
-    text-decoration: none;
-    letter-spacing: 0.12em;
-    display: inline-block;
-    position: relative;
-  }
- .nav-link::after{
-    color:var(--colorLink);
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    display: block;
-    background: none repeat scroll 0 0 transparent;
-    height: 2px;
-    width: 0;
-    background: var(--colorLink);
-    transition: width 0.3s ease 0s, left 0.3s ease 0s;
-}
-/*Медиазапрос. Нужен для того, чтобы на конкретном разрешении внести изменеия в класс
-т.е адаптация */
-
-
-@media(max-width:1200px)
-{
-    .navbar{
-        font-size:15px;
-    }
-    .navbar-collapse img{
-        width:35px;
-        height:35px;
-    }
-    
-}
-
-.nav-link:hover{
-    font-weight: 600;
-    color:var(--colorLink);
-}
- .nav-link:hover::after{
-    width: 100%; 
-    left: 0; 
-}
-.nav-item{
-    margin-right:40px;
-}
-/*Стили баланса*/
-.block_balance{
-    padding:8px 0;
-    width:130px;
-    height: 45px;
-    border-radius: 9%;
-    background-color:#000000;
-    
-}
 /* Основное */
 .txt1{
     font-size: 34px;
@@ -156,79 +71,5 @@ body{
 }
 
 
-/* Основное */
-
-.balance_parag{
-    font-size:19px;
-    color: var(--colorBalanceP);
-    letter-spacing: 0.12em;
-    font-weight: 900;
-}
-.balance_text{
-    font-weight:900;
-    font-style: normal;
-    line-height: 24px;
-    letter-spacing: 0.12em;
-    color:#000000;
-}
-
-/*Личный кабинет и корзина*/
-
-/*Обнуление margin у последнего элемента*/
-.lk-and-trash:last-child{
-    margin-right:0;
-}
 
 
-.block_notebook{
-    border-bottom:1px solid #000000;
-    
-}
-/*Просто по приколу может пригодится:)*/
-.block{ 
-    
-    height: 100%;
-}
-
-
-/*Стилизация хэдеров в секции*/
-#center_text_first{
-    color:#000000;
-    word-break:break-all;
-    margin:0 auto;
-    letter-spacing:1px;
-    font-size: clamp(25px, 7vw, 40px);
-    font-weight: 900;
-    line-height: 48px;
-}
-.text_about_us_header{
-    font-size:clamp(20px, 4vw, 24px);
-    font-weight: bold;
-    word-break:break-all;
-}
-.text_about_us_paragraph{
-
-    font-size: clamp(12px, 4vw, 18px);
-}
-#center_text_second{
-    padding-top:20px;
-    padding-bottom: 40px;
-    word-break:break-all; /*Перенос строки*/
-    margin:0 auto; /*обнуляем отступ параграфа, т.к в html он имеет базовый отступ*/
-    font-weight: 400;
-
-    font-size: clamp(16px, 4vw, 24px);
-    line-height: 48px;
-}
-/*Подвал сайта(еще в разработке)*/
-.footer{
-    
-    bottom:0;
-    left:0;
-    border-top:2px solid black;
-    background-color: var(--colorFooter);
-}
-#footer_telegnvk{
-    max-width: 45px;
-    min-height: 45px;
-}
