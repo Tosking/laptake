@@ -92,34 +92,34 @@
                 <div class="person_team col-lg-4">
                     <h2 class="team_name">Фоминых Владимир</h2>
                     <h2 class="team_role">Backend Dev</h2>
-                    <div class="person_photo"><img src="/assets/photo/вова.svg" alt="#" width="390" height="580"></div>
+                    <div class="person_photo"><img src="/assets/photo/вова.jpg" alt="#" width="390" height="580"></div>
                 </div>
                 <div class="person_team col-lg-4">
                     <h2 class="team_name">Цулая Гурами</h2>
                     <h2 class="team_role">Designer</h2>
-                    <div class="person_photo"><img src="/assets/photo/гурами.svg" alt="#" width="390" height="580"></div>
+                    <div class="person_photo"><img src="/assets/photo/гурами.jpg" alt="#" width="390" height="580"></div>
                 </div>
                 <div class="person_team col-lg-4">
                     <h2 class="team_name">Ревцова Светлана</h2>
                     <h2 class="team_role">Frontend Dev</h2>
-                    <div class="person_photo"><img src="/assets/photo/света.svg" alt="#" width="390" height="580"></div>
+                    <div class="person_photo"><img src="/assets/photo/света.jpg" alt="#" width="390" height="580"></div>
                 </div>
             </div>
             <div class="second_stroke_photo text-center row">
                 <div class="person_team col-lg-4">
                     <h2 class="team_name">Аксентьев Евгений</h2>
                     <h2 class="team_role">Backend Dev</h2>
-                    <div class="person_photo"><img src="/assets/photo/женя.svg" alt="#" width="390" height="580"></div>
+                    <div class="person_photo"><img src="/assets/photo/женя.jpg" alt="#" width="390" height="580"></div>
                 </div>
                 <div class="person_team col-lg-4">
                     <h2 class="team_name">Скорба Родион</h2>
                     <h2 class="team_role">Team Lider</h2>
-                    <div class="person_photo"><img src="/assets/photo/родя.svg" alt="#" width="390" height="580"></div>
+                    <div class="person_photo"><img src="/assets/photo/родя.jpg" alt="#" width="390" height="580"></div>
                 </div>
                 <div class="person_team col-lg-4">
                     <h2 class="team_name">Синкевич Данил</h2>
                     <h2 class="team_role">Full-stack</h2>
-                    <div class="person_photo"><img src="/assets/photo/даня.svg" alt="#" width="390" height="580"></div>
+                    <div class="person_photo"><img src="/assets/photo/даня.jpg" alt="#" width="390" height="580"></div>
                 </div>
             </div>
     </div>
