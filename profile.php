@@ -102,8 +102,10 @@
                     <div class="all_button">
                         <button type="button" class="button_settings mt-3"><img src="/assets/photo/settings.svg" alt="#"
                                 width="30" height="30"></button>
-                        <button type="button" class="button_exit mt-3"><img src="/assets/photo/exit.svg" alt="#"
+                        <a href="/exit.php">
+                        <button  type="button" class="button_exit mt-3"><img src="/assets/photo/exit.svg" alt="#"
                                 width="30" height="30"></button>
+                            </a>
                         <form method="post" action="/add_balance.php">
                             <input type="text" class="col-12 mt-3 p-1 mb-2" name="value" placeholder="₽">
                             <div class="text-center" style="font-size: 10px">Введите значение меньше 100 тыс.</div>
