@@ -218,13 +218,13 @@
                                                             echo '
                                                             <div class="container">
                                                                 <div class="row mt-1 p-3 text-center laptop" style="border-radius:20px; background-color: #cccccc">
-                                                                    <img src="'.$laptop->picture.'" class="col" style="width: 154px; height:154px;">
-                                                                    <div class="col-sm-7">
+                                                                    <img src="'.$laptop->picture.'" style="width: 154px; height:154px;">
+                                                                    <div class="col-sm-6 col-3">
                                                                         <div class="align-self-start" style="font-weight: 600">'.$laptop->name.'</div>
                                                                         <div class="row font-weight-normal">'.$laptop->description.'</div>
                                                                     </div>
                                                                     <div class="col align-self-center">
-                                                                        <button class="col align-self-center btn btn-primary btn-sm btn-dark" style="font-size: clamp(20px, 5vw, 30px); border-radius:20px">Заказать</button>
+                                                                        <button class="col align-self-center btn btn-primary btn-sm btn-dark" style="font-size: clamp(15px, 5vw, 25px); border-radius:20px">Заказать</button>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -266,7 +266,7 @@
                                                             </div>
                                                             <div class="describing_laptop_down">
                                                                 <div class="rent_dates">
-                                                                    <div class="text_rent_dates inline">Дата аренды:</div>
+                                                                    <div class="text_rent_dates inline" style="font-weight: 900">Дата аренды:</div>
                                                                     <div class="start_rent_date inline"
                                                                         id="personal_start_rent_date">
                                                                         '.$row->start.'
@@ -278,7 +278,7 @@
                                                                     </div>
                                                                 </div>
                                                                 <div class="payments_amount ">
-                                                                    <div class="text_payment_amount inline">сумма оплаты:
+                                                                    <div class="text_payment_amount inline" style="font-weight: 900">Сумма оплаты:
                                                                     </div>
                                                                     <div class="payment_amount inline"
                                                                         id="personal_payment_amount inline">
