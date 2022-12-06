@@ -23,7 +23,7 @@
         <!--Создаем сам навбар-->
         <div class="container">
             <!--Создаем контейнер с нужными нам отступами-->
-            <a class="navbar-brand m-0" href="/">
+            <a class="navbar-brand m-0" href="/index.php">
                 <img src="/assets/photo/logo.svg" alt="#">
             </a>
             <!--Затем используем специальный класс для логотипов компаний или организаций-->
@@ -39,7 +39,7 @@
                     <!--Создаем список -->
                     <li class="nav-item">
                         <!--Создаем элементы в которых будут храниться ссылки на страницы-->
-                        <a class="nav-link" aria-current="page" href="/">Главная</a>
+                        <a class="nav-link" aria-current="page" href="/index.php">Главная</a>
                         <!--Ну и сама страница-->
                     </li>
                     <li class="nav-item">
