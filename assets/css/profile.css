@@ -52,7 +52,7 @@ body{
 }
 .tab_photo{
     width: 210px;
-    min-height: 300px;
+    max-height: 400px;
     background-color: var(--colorHead);
     border-radius: 10px;
     padding-top: 26px;
