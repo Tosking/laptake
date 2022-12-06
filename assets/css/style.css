@@ -16,10 +16,9 @@ html{
 body{
     font-size:18px;
     background: #4c4c4c;
-    background: -moz-linear-gradient(-45deg,  var(--colorBack) 0%, var(--colorBack) 100%);
-    background: -webkit-linear-gradient(-45deg,  var(--colorBack) 0%,var(--colorBack) 100%);
-    background: linear-gradient(135deg,  var(--colorBack) 0%,var(--colorBack) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', endColorstr='#969696',GradientType=1 );
+    background: -webkit-linear-gradient(135deg, rgb(174, 174, 174), rgb(119, 119, 119));
+    background: -moz-linear-gradient(135deg, rgb(174, 174, 174), rgb(119, 119, 119));
+    background: linear-gradient(135deg, rgb(174, 174, 174), rgb(119, 119, 119));
     padding:0;
     box-sizing: border-box;
     margin: 0;

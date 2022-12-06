@@ -82,11 +82,11 @@
 
     <div class="aboutus container">
             <div class="text">
-                <h2 class="text-center txt1"><strong>О компании Laptake</strong></h2>
-                <h3 id="main_text" class="txt2">
+                <h2 class="text-center txt1" style="font-weight: bold;">О компании Laptake</h2>
+                <p id="main_text" class="txt2">
                     <strong>Laptake</strong> — это учебный проект по аренде ноутбуков. Мы даём нашим клиентам возможность независимо от обстоятельств, времени, места и погоды, работать из любой удобной точки, имея под рукой лишь розетку и хорошее настроение. На нашем сайте предоставлен большой ассортимент ноутбуков, для различных сценариев использования, начиная от рабочих решений, заканчивая игровыми. Мы ответственно подходим к подготовке оборудования, для беспроблемного использования клиентами наших компьютеров.
-                </h3>
-                <h2 class="txt3 text-center"><strong>Наша команда:</strong></h2>
+                </p>
+                <h2 class="txt3 text-center"><strong>Наша команда</strong></h2>
             </div>
             <div class="first_stroke_photo text-center row">
                 <div class="person_team col-lg-4">
