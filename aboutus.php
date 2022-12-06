@@ -44,7 +44,7 @@
                         <a class="nav-link" href="/catalog.php">Каталог</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/aboutus.html">О нас</a>
+                        <a class="nav-link" href="/aboutus.php">О нас</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Оплата и доставка</a>

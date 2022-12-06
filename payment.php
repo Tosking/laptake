@@ -79,11 +79,50 @@
             </div> <!-- collapse navbar-collapse -->
         </div> <!-- Container -->
 
-    </nav> <!-- Navigtaion -->
-
-
-
-
+    </nav> <!-- Navigtaion -->  
+    <div class="container" style="margin-top: 200px">              
+    <?php
+        $time = time();
+        $date = gmdate("Y-m-d", $time);
+        $date_max_start = gmdate("Y-m-d", $time + (60 * 60 * 24 * 7));
+        $date_min_end = gmdate("Y-m-d", $time + (60 * 60 * 24 * 2));
+        $date_max_end = gmdate("Y-m-d", $time + (60 * 60 * 24 * 365));
+        $laptop = $pdo->query('SELECT * FROM laptop WHERE id = '.$_GET["laptop"])->fetch(PDO::FETCH_OBJ);
+        echo '
+            <input value='.$laptop->price.' id="value" style="display: none;">
+            <div class="row mt-3 mb-3 p-3 text-center laptop" style="border-radius:20px">
+                <img src="'.$laptop->picture.'" class="col-1" style="width: 154px; height:154px;">
+                <div class="col-sm-7">
+                    <div class="align-self-start" style="font-weight: 600">'.$laptop->name.'</div>
+                    <div class="row font-weight-normal m-1">'.$laptop->description.'</div>
+                </div>
+                <div class="col-12 align-self-center">
+                    <form method="post" action="/payment_pars.php">
+                        <input value='.$laptop->id.' name="laptop" style="display: none;">
+                        <div class="row justify-content-center mt-3 mb-1">
+                            <div class="col">
+                                <div class="b">Когда привезти:</div>
+                                <input onchange="calc_value()" class="date" type="date" id="start" name="start"
+                                value="'.$date.'"
+                                min="'.$date.'" max="'.$date_max_start.'">
+                            </div>
+                            <div class="col">
+                                <div class="text-center b">Когда забрать:</div>
+                                <input onchange="calc_value()" class="date" type="date" id="end" name="end"
+                                value="'.$date_min_end.'"
+                                min="'.$date_min_end.'" max="'.$date_max_end.'">
+                            </div>
+                            <div class="col">
+                                <div class="text-center b">Итоговая цена</div>
+                                <p class="h2" id="end_value"></p>                           
+                            </div>
+                        </div>
+                        <button type="submit" class="col align-self-center btn btn-primary btn-sm btn-dark" style="font-size: clamp(20px, 5vw, 30px)">Оплатить</button>
+                    </form>
+                </div>
+            </div>'
+    ?>
+    </div>
 
 
 
@@ -108,7 +147,7 @@
 </footer><!--Container-fluid footer-->
 
     <script src="/assets/js/bootstrap.bundle.min.js"></script>
-    <script src="js/app.js"></script>
+    <script src="/assets/js/payment.js"></script>
 </body>
 
 </html>
