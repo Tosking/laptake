@@ -1,5 +1,4 @@
 body {
-    background-color: #AEAEAE;
     background-image: url("/assets/photo/more-laptop-mini.svg");
 }
 .laptop {
@@ -8,4 +7,17 @@ body {
 
 .date {
     max-width: 150px;
+}
+
+.btn:focus {
+	outline: 0;
+	box-shadow: none;
+}
+
+.description .btn:hover{
+	color: #FC6C33;
+}
+
+.footer {
+	margin-top: 50px;
 }

@@ -11,6 +11,7 @@
 
     <link rel="stylesheet" href="/assets/css/payment.css">
     <link rel="stylesheet" href="/assets/css/main.css">
+		<link rel="stylesheet" href="/assets/css/des_delivery.css">
     <?php require './php/configDB.php'; ?>
 
 </head>
@@ -124,7 +125,45 @@
     ?>
     </div>
 
-
+		<section class="description">
+		<div class="container overflow-hidden col-8" style="background-color: #D9D9D9; border-radius: 11px;">
+			<button class="btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a" aria-expanded="false" aria-controls="collapseExample">
+				<b style="font-size: 30px;">Как выбрать ноутбук?</b>
+			</button>
+			<div class="collapse" id="a">
+				<div class="card card-body fs-5" style="background: none; border: none;">
+					В разделе «Каталог» представлен ассортимент ноутбуков. Вы можете выбрать нужный ноутбук: нажать кнопку «Заказать» и ваc автоматически перенесет на страницу выбора доступных дат для аренды.  
+				</div>
+			</div>
+			<br>
+			<button class="btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#b" aria-expanded="false" aria-controls="collapseExample">
+				<b style="font-size: 30px;">Как взять в аренду ноутбук?</b>
+			</button>
+			<div class="collapse" id="b">
+				<div class="card card-body fs-5" style="background: none; border: none;">
+					Что бы арендовать ноутбук, вам необходимо в разделе «Заказать» выбрать даты аренды, и нажать на кнопку оплатить.
+				</div>
+			</div>
+			<br>
+			<button class="btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c" aria-expanded="false" aria-controls="collapseExample">
+				<b style="font-size: 30px;">Как происходит оплата?</b>
+			</button>
+			<div class="collapse" id="c">
+				<div class="card card-body fs-5" style="background: none; border: none;">
+					Мы предлагаем вам несколько вариантов оплаты аренды ноутбков.<br>Вы можете произвести оплату как на нашем сайте за безналичный расчёт, так и в случае необходимости, вы всегда можете оплатить наличными при личной встрече с нашим курьером.<br><br><b>Первый способ:</b>Если вы хотите произвести оплату со счета в личном кабинете, вам необходимо нажать на кнопку «оплатить», вас перенесет на страницу оплаты, где вам необходимо будет выбрать способ оплаты, нажать на кнопку «Со счета» и далее нажать на кнопку «Оплатить». <br>Денежные средства автоматически спишутся с вашего баланса в личном кабинете.<br><br><b>Второй способ:</b>Если вы хотите произвести оплату без пополнения счёта в личном кабинете, вы можете произвести оплату напрямую с банковской карты.<br>Для это вам необходимо нажать на кнопку «Оплатить», вас перенесет на страницу оплаты, где вам необходимо будет нажать на кнопку «Оплата банковской картой» и далее нажать на кнопку «Оплатить».<br>В автоматическом режиме вас перенесет на страницу оплаты банка.
+				</div>
+			</div>
+			<br>
+			<button class="btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#d" aria-expanded="false" aria-controls="collapseExample">
+				<b style="font-size: 30px;">Как происходит доставка ноутбуков? </b>
+			</button>
+			<div class="collapse" id="d">
+				<div class="card card-body fs-5" style="background: none; border: none;">
+					Наша компания осуществляет бесплатную доставку в любое удобное для вас место.<br>Для оформления доставки, вам необходимо заполнить адрес доставки, в разделе оплаты.<br>Так же с вами свяжется менеджер, для подтверждения адреса по которому будет производиться доставка. Время и место доставки, всегда можно уточнить у менеджера.
+				</div>
+			</div>
+		</div>
+	</section>
 
     <footer class = "container-fluid footer">
   <div class="container">
