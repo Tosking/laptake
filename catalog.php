@@ -117,6 +117,10 @@
 				else{
 					$laptops = $pdo->query('SELECT * FROM laptop');
 				}
+        $loged = FALSE;
+        if(isset($_COOKIE["id"])){
+          $loged = TRUE;
+        }
 				while($row = $laptops->fetch(PDO::FETCH_OBJ)){
 					echo '<div class="row">
 						<div class="col-12 block-rec laptop mb-3">
@@ -127,9 +131,14 @@
 										<div style="margin-bottom: 10px;" class="col-12">
 											<strong>от '.$row->price.'₽/сут.</strong>
 										</div>
-										<div class="col-md-12 col-sm-12 col-xs-12">
-											<button class="btn fs-4 param"><strong>Заказать</strong></button>
-											<button class="btn fs-5 param"><strong>В избранное</strong></button>
+										<div class="col-md-12 col-sm-12 col-xs-12">';
+                      if($loged){
+											echo '<a href="/payment.php?laptop='.$row->id.'"><button class="btn fs-4 param"><strong>Заказать</strong></button></a>';
+                      }
+                      else{
+                      echo '<a href="/auth.php"><button class="btn fs-4 param"><strong>Заказать</strong></button></a>';
+                      }
+											echo'<button class="btn fs-5 param"><strong>В избранное</strong></button>
 										</div>
 									</div>
 							</div>

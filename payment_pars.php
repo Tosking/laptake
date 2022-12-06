@@ -6,6 +6,12 @@
         header('Location: /');
     }
     else{
+        if(isset($_POST["address"])){
+            $pdo->query('UPDATE user SET address = "'.$_POST["address"].'" WHERE id = '.$_COOKIE["id"]);
+        }
+        if(isset($_POST["phone"])){
+            $pdo->query('UPDATE user SET phone = "'.$_POST["phone"].'" WHERE id = '.$_COOKIE["id"]);
+        }
         $days_diff = (strtotime($end) - strtotime($start)) / 60 * 60 * 24;
         $balance = $pdo->query('SELECT balance FROM user WHERE id = '.$_COOKIE["id"])->fetch(PDO::FETCH_OBJ);
         $laptop = $pdo->query('SELECT * FROM laptop WHERE id = '.$_POST["laptop"])->fetch(PDO::FETCH_OBJ);
@@ -26,15 +32,16 @@
             $end_value = $laptop->price / 30;
         }
         if($balance->balance < $end_value){
-            //header('Location: /');
+            header('Location: /');
         }
         else{
+            $copy = $pdo->query('SELECT id FROM copy WHERE model = '.$laptop->id.' AND rent_ready = 1')->fetch(PDO::FETCH_OBJ);
             $tUnixTime = time();
             $sGMTMySqlString = gmdate("Y-m-d H:i:s", $tUnixTime);
             $pdo->query('INSERT INTO payments(user,value,date,payment_choose) VALUES ('.$_COOKIE["id"].','.$end_value.',"'.$sGMTMySqlString.'", 1)');
             $payment_id = $pdo->query('SELECT id FROM payments WHERE date = "'.$sGMTMySqlString.'"')->fetch(PDO::FETCH_OBJ);
-            $copy = $pdo->query('SELECT id FROM copy WHERE model = '.$laptop->id.' AND rent_ready = 1')->fetch(PDO::FETCH_OBJ);
             $pdo->query('INSERT INTO renting(user,copy,payment_id,start,end) VALUES ('.$_COOKIE["id"].','.$copy->id.','.$payment_id->id.',"'.$start.'","'.$end.'")');
-            $pdo->query('UPDATE copy SET rent_ready = 1 WHERE id = '.$copy->id);
+            $pdo->query('UPDATE copy SET rent_ready = 0 WHERE id = '.$copy->id);
+            header('Location: /profile.php#tab_03');
         }
     }

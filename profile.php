@@ -251,8 +251,9 @@
                                                             $payment = $pdo->query('SELECT value FROM payments WHERE id = '.$row->payment_id.'')->fetch(PDO::FETCH_OBJ);
                                                             echo'
                                                             <!-- колонка под фото ноутбука-->
+                                                        
                                                         <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                                                            <div class="laptop_picture inline" id="personal_laptop_picture">
+                                                            <div class="laptop_picture inline mb-3" id="personal_laptop_picture">
                                                                 <img src="'.$laptop->picture.'"
                                                                     alt="#" style="height: 154px; width: 154px">
                                                             </div>
