@@ -6,6 +6,10 @@
         header("Location: /profile.php#tab_01");
     }
     else{
+        $tUnixTime = time();
+        $sGMTMySqlString = gmdate("Y-m-d H:i:s", $tUnixTime);
         $pdo->query('UPDATE user SET balance = '.($user_value->balance + $value).' WHERE id = '.$_COOKIE["id"].'');
+        $pdo->query('INSERT INTO payments(user,value,date,payment_choose) VALUES ('.$_COOKIE["id"].','.$value.',"'.$sGMTMySqlString.'", 1)');
+        echo $sGMTMySqlString;
         header("Location: /profile.php#tab_01");
     }

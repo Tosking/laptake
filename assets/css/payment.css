@@ -1,0 +1,23 @@
+body {
+    background-image: url("/assets/photo/more-laptop-mini.svg");
+}
+.laptop {
+    background-color: #D9D9D9;
+}
+
+.date {
+    max-width: 150px;
+}
+
+.btn:focus {
+	outline: 0;
+	box-shadow: none;
+}
+
+.description .btn:hover{
+	color: #FC6C33;
+}
+
+.footer {
+	margin-top: 50px;
+}

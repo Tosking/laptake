@@ -2,10 +2,9 @@
 body{
     font-size:18px;
     background: #4c4c4c;
-    background: -moz-linear-gradient(-45deg,  var(--colorBack) 0%, #8B8B8B 50%);
-    background: -webkit-linear-gradient(-45deg,  var(--colorBack) 0%,#8B8B8B  50%);
-    background: linear-gradient(135deg,  var(--colorBack) 0%,#8B8B8B  50%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', endColorstr='#969696',GradientType=1 );
+    background: -webkit-linear-gradient(135deg, rgb(174, 174, 174), rgb(119, 119, 119));
+    background: -moz-linear-gradient(135deg, rgb(174, 174, 174), rgb(119, 119, 119));
+    background: linear-gradient(135deg, rgb(174, 174, 174), rgb(119, 119, 119));
     padding:0;
     box-sizing: border-box;
     margin: 0;
@@ -20,7 +19,7 @@ body{
     margin-top: 40px;
     text-align: justify;
     line-height: 40px;
-    font-size: 30px;
+    font-size: 20px;
 }
 .txt3{
     margin-top: 40px;
@@ -41,10 +40,10 @@ body{
     height: auto;
 }
 .team_name{
-    font-size: 33px;
+    font-size: 25px;
 }
 .team_role{
-    font-size: 33px;
+    font-size: 25px;
 }
 .first_stroke_photo{
     margin-top: 30px;

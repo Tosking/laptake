@@ -89,7 +89,9 @@
         <h1 id = "center_text_first">Дарим возможность</h1>
         <p id = "center_text_second">Готовый к использованию ноутбук с<br> доставкой на дом </p>
          </div>
+         <a href="/catalog.php" >
          <button type="button" class="btn btnpromo"><strong>Заказать в один клик</strong></button>
+        </a>
       </div>
       <div class="col-md-6 col-sm-12 col-lg-6">
         <div class="block"><img src="/assets/photo/back.svg" alt="#" class="img-fluid"></div>
