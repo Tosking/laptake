@@ -4,7 +4,8 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <link rel="icon" type="image/x-icon" href="/assets/photo/favicon.png">
+  <title>Каталог</title>
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;900&display=swap" rel="stylesheet">
 	<link href="/assets/css/bootstrap.min.css" rel="stylesheet">
   <link href="/assets/css/main.css" rel="stylesheet">
@@ -41,7 +42,7 @@
                         <a class="nav-link" href="/catalog.php">Каталог</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">О нас</a>
+                        <a class="nav-link" href="/aboutus.php">О нас</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Оплата и доставка</a>

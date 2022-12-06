@@ -8,7 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;900&display=swap" rel="stylesheet">
     <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
-
+    <link rel="icon" type="image/x-icon" href="/assets/photo/favicon.png">
+    <title>Laptake</title>
     <link rel="stylesheet" href="/assets/css/style.css">
     <?php require './php/configDB.php'; ?>
 

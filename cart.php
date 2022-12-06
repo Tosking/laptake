@@ -12,6 +12,8 @@
     <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/fontello.css">
     <script src="js/bootstrap.bundle.min.js"></script>
+    <link rel="icon" type="image/x-icon" href="/assets/photo/favicon.png">
+    <title>Корзина</title>
     <link rel="stylesheet" href="/assets/css/main.css">
     <link rel="stylesheet" href="/assets/css/cart.css">
     <?php require './php/configDB.php'?>
