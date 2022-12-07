@@ -10,6 +10,8 @@
 	<link href="/assets/css/bootstrap.min.css" rel="stylesheet">
   <link href="/assets/css/main.css" rel="stylesheet">
 	<link href="/assets/css/catalog.css" rel="stylesheet">
+    <script src="/assets/js/jquery-3.6.1.min.js"></script>
+    <script src="assets/js/favorite.js"></script>
 	<title>Каталог</title>
 	<?php require './php/configDB.php'?>
 </head>
@@ -138,7 +140,7 @@
                       else{
                       echo '<a href="/auth.php"><button class="btn fs-4 param"><strong>Заказать</strong></button></a>';
                       }
-											echo'<button class="btn fs-5 param"><strong>В избранное</strong></button>
+											echo'<button class="btn fs-5 param" onclick="addtofav('.$row->id.')"><strong>В избранное</strong></button>
 										</div>
 									</div>
 							</div>
