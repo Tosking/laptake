@@ -40,7 +40,7 @@
             $sGMTMySqlString = gmdate("Y-m-d H:i:s", $tUnixTime);
             $pdo->query('INSERT INTO payments(user,value,date,payment_choose) VALUES ('.$_COOKIE["id"].','.$end_value.',"'.$sGMTMySqlString.'", 1)');
             $payment_id = $pdo->query('SELECT id FROM payments WHERE date = "'.$sGMTMySqlString.'"')->fetch(PDO::FETCH_OBJ);
-            $pdo->query('INSERT INTO renting(user,copy,payment_id,start,end) VALUES ('.$_COOKIE["id"].','.$copy->id.','.$payment_id->id.',"'.$start.'","'.$end.'")');
+            $pdo->query('INSERT INTO renting(user,copy,payment_id,start,end) VALUES ('.$_COOKIE["id"].','.$copy->id.','.$payment_id->id.' ,"'.$start.'","'.$end.'")');
             $pdo->query('UPDATE copy SET rent_ready = 0 WHERE id = '.$copy->id);
             $pdo->query('UPDATE user SET balance = '.round(intval($balance->balance) - $end_value).' WHERE id = '.$_COOKIE["id"]);
             header('Location: /profile.php#tab_03');

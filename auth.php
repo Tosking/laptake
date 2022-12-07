@@ -65,7 +65,7 @@
                     aria-describedby="inputGroup-sizing-sm" placeholder="Login" name="login">
             </div>
             <div class="input-group input-group-sm mx-auto mb-5 w-75 row">
-                <input style="border: none; border-bottom: 1px solid; border-radius: 0px;" type="text"
+                <input style="border: none; border-bottom: 1px solid; border-radius: 0px;" type="password"
                     class="justify-content-center form-control" aria-label="Sizing example input"
                     aria-describedby="inputGroup-sizing-sm" placeholder="Password" name="pass">
             </div>
