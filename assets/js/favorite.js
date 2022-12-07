@@ -3,13 +3,19 @@ function addtofav(id){
     $.ajax({
         async: false,
         type: "POST",
-        url: "/php/fav.php",
+        url: "/fav.php",
         data: 'action=add&id=' + id,
         error: function (){
             alert("Ошибка добавления!");
         },
-        success: function (reponse){
+        success: function (response){
             alert("Добавленно в избанное!");
+            if(response == "1"){
+                $("#"+id).text('В избранное');
+            }
+            else{
+                $("#"+id).text('Из избранного');
+            }
         }
     });
 }

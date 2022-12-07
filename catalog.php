@@ -140,7 +140,7 @@
                       else{
                       echo '<a href="/auth.php"><button class="btn fs-4 param"><strong>Заказать</strong></button></a>';
                       }
-											echo'<button class="btn fs-5 param" onclick="addtofav('.$row->id.')"><strong>В избранное</strong></button>
+											echo'<button class="btn fs-5 param" onclick="addtofav('.$row->id.')"><strong style="font-size:1rem;"  id="'.$row->id.'">В избранное</strong></button>
 										</div>
 									</div>
 							</div>
