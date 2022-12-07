@@ -43,7 +43,6 @@
             $pdo->query('INSERT INTO renting(user,copy,payment_id,start,end) VALUES ('.$_COOKIE["id"].','.$copy->id.','.$payment_id->id.',"'.$start.'","'.$end.'")');
             $pdo->query('UPDATE copy SET rent_ready = 0 WHERE id = '.$copy->id);
             $pdo->query('UPDATE user SET balance = '.round(intval($balance->balance) - $end_value).' WHERE id = '.$_COOKIE["id"]);
-            echo $days_diff;
             header('Location: /profile.php#tab_03');
         }
     }

@@ -125,6 +125,9 @@
           $loged = TRUE;
           $favorited = json_decode($pdo->query('SELECT favorite FROM user WHERE id = '.$_COOKIE["id"])->fetch(PDO::FETCH_OBJ)->favorite);
         }
+        if($favorited == NULL){
+          $favorited = [];
+        }
 				while($row = $laptops->fetch(PDO::FETCH_OBJ)){
 					echo '<div class="row">
 						<div class="col-12 block-rec laptop mb-3">
