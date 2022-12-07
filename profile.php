@@ -245,38 +245,49 @@
                                                 <div class="row for-small-screens_laptop">
                                                         <?php
                                                         $history = $pdo->query('SELECT * FROM renting WHERE user = '.$_COOKIE["id"].'');
-                                                        while($row = $history->fetch(PDO::FETCH_OBJ)){
-                                                            $copy = $pdo->query('SELECT model FROM copy WHERE id = '.$row->copy.'')->fetch(PDO::FETCH_OBJ);
-                                                            $laptop = $pdo->query('SELECT * FROM laptop WHERE id = '.$copy->model.'')->fetch(PDO::FETCH_OBJ);
-                                                            $payment = $pdo->query('SELECT value FROM payments WHERE id = '.$row->payment_id.'')->fetch(PDO::FETCH_OBJ);
-                                                            echo'
+
+
+                                                        $history = $pdo->query('SELECT favorite FROM user WHERE id =' . $_COOKIE["id"] . '')->fetch(PDO::FETCH_OBJ)->favorite;
+                                                        if ($history == NULL) {
+                                                            echo '<div class="container mt-2 p-2 pt-2 text-center" style="background: #cccccc; border-radius:20px">
+                                                            <div class="h1 m-5" style="color: #555555; font-size: clamp(10px, 5vw, 30px)">Здесь пока пусто,<br> сделай свой первый заказ!</p>
+                                                        </div>';
+                                                        }
+
+
+                                                        else{
+                                                        while($row = $history->fetch(PDO::FETCH_OBJ)) {
+                                                            $copy = $pdo->query('SELECT model FROM copy WHERE id = ' . $row->copy . '')->fetch(PDO::FETCH_OBJ);
+                                                            $laptop = $pdo->query('SELECT * FROM laptop WHERE id = ' . $copy->model . '')->fetch(PDO::FETCH_OBJ);
+                                                            $payment = $pdo->query('SELECT value FROM payments WHERE id = ' . $row->payment_id . '')->fetch(PDO::FETCH_OBJ);
+                                                            echo '
                                                             <!-- колонка под фото ноутбука-->
                                                         
                                                         <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                                                             <div class="laptop_picture inline mb-3" id="personal_laptop_picture">
-                                                                <img src="'.$laptop->picture.'"
+                                                                <img src="' . $laptop->picture . '"
                                                                     alt="#" style="height: 154px; width: 154px">
                                                             </div>
                                                         </div>
                                                         <!-- колонка под описание ноутбука -->
                                                         <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
                                                             <div class="name_laptop" id="personal_name_laptop">
-                                                                <strong>'.$laptop->name.'</strong>
+                                                                <strong>' . $laptop->name . '</strong>
                                                             </div>
                                                             <div class="parameter_laptop" id="personal_parameter_laptop">
-                                                                '.$laptop->description.'
+                                                                ' . $laptop->description . '
                                                             </div>
                                                             <div class="describing_laptop_down">
                                                                 <div class="rent_dates">
                                                                     <div class="text_rent_dates inline" style="font-weight: 900">Дата аренды:</div>
                                                                     <div class="start_rent_date inline"
                                                                         id="personal_start_rent_date">
-                                                                        '.$row->start.'
+                                                                        ' . $row->start . '
                                                                     </div>
                                                                     <div class="minus inline">-</div>
                                                                     <div class="end_rent_date inline"
                                                                         id="personal_end_rent_date">
-                                                                        '.$row->end.'
+                                                                        ' . $row->end . '
                                                                     </div>
                                                                 </div>
                                                                 <div class="payments_amount ">
@@ -284,12 +295,13 @@
                                                                     </div>
                                                                     <div class="payment_amount inline"
                                                                         id="personal_payment_amount inline">
-                                                                        '.$payment->value.'
+                                                                        ' . $payment->value . '
                                                                     </div>
                                                                     <div class="ruble inline">₽</div>   
                                                                 </div>
                                                             </div>
                                                         </div>';
+                                                        }
                                                         }?>                                                   
                                                 </div>
                                             </div>
