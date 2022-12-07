@@ -91,8 +91,11 @@
         $laptop = $pdo->query('SELECT * FROM laptop WHERE id = '.$_GET["laptop"])->fetch(PDO::FETCH_OBJ);
         echo '
             <input value='.$laptop->price.' id="value" style="display: none;">
+            <div class="container overflow-hidden col-8">
             <div class="row mt-3 mb-3 p-3 text-center laptop" style="border-radius:20px">
-                <img src="'.$laptop->picture.'" class="col-1 justify-content-center" style="width: 154px; height:154px;">
+            <div class="col">
+                <img src="'.$laptop->picture.'" style="width: 154px; height:154px;">
+                </div>
                 <div class="col-sm-9">
                     <div class="align-self-start" style="font-weight: 600">'.$laptop->name.'</div>
                     <div class="row font-weight-normal m-1">'.$laptop->description.'</div>
@@ -133,6 +136,7 @@
                         <button type="submit" class="col align-self-center btn btn-primary btn-sm btn-dark" style="font-size: clamp(20px, 5vw, 30px)">Оплатить</button>
                     </form>
                 </div>
+            </div>
             </div>';
     ?>
     </div>
