@@ -129,15 +129,15 @@
 					echo '<div class="row">
 						<div class="col-12 block-rec laptop mb-3">
 								<div class="row lap-photo justify-content-center">
-									<img src="'.$row->picture.'" class="col-md-3 col-sm-3 col-xs-12 mobile-margin mh-photo" alt="laptop" style="object-fit:contain">
-									<div class="col-md-7 col-sm-7 col-xs-12 text-lg-start fs-4"><strong>'.$row->name.'</strong><br>'.$row->description.'</div>
-									<div class="col-md-2 col-sm-2 col-xs-12 main-text fs-4 d-flex align-content-center flex-wrap justify-content-center">
+									<img src="'.$row->picture.'" class=" col-lg-3 col-md-12 col-sm-12 col-xs-12 mobile-margin mh-photo" alt="laptop" style="object-fit:contain">
+									<div class="col-lg-7 col-md-12 col-sm-12 col-xs-12 text-lg-start fs-4"><strong>'.$row->name.'</strong><br>'.$row->description.'</div>
+									<div class="col-lg-2 col-md-12 col-sm-12 col-xs-12 main-text fs-4 d-flex align-content-center flex-wrap justify-content-center">
 										<div style="margin-bottom: 10px;" class="col-12">
 											<strong>от '.round($row->price / 30, -1).'₽/сут.</strong>
 										</div>
-										<div class="col-md-12 col-sm-12 col-xs-12">';
+										<div class="col-md-12 col-sm-12 col-xs-12 text-center">';
                       if($loged){
-											echo '<a href="/payment.php?laptop='.$row->id.'"><button class="btn fs-4 param"><strong>Заказать</strong></button></a>';
+											echo '<a href="/payment.php?laptop='.$row->id.'"><button class="btn fs-4 param"><strong ">Заказать</strong></button></a>';
                       }
                       else{
                       echo '<a href="/auth.php"><button class="btn fs-4 param"><strong>Заказать</strong></button></a>';
