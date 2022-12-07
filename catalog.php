@@ -47,7 +47,7 @@
                         <a class="nav-link" href="/aboutus.php">О нас</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Оплата и доставка</a>
+                        <a class="nav-link" href="/payment.php">Оплата и доставка</a>
                     </li>
 
 
