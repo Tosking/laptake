@@ -133,7 +133,7 @@
 									<div class="col-md-7 col-sm-7 col-xs-12 text-lg-start fs-4"><strong>'.$row->name.'</strong><br>'.$row->description.'</div>
 									<div class="col-md-2 col-sm-2 col-xs-12 main-text fs-4 d-flex align-content-center flex-wrap justify-content-center">
 										<div style="margin-bottom: 10px;" class="col-12">
-											<strong>от '.$row->price.'₽/сут.</strong>
+											<strong>от '.round($row->price / 30, -1).'₽/сут.</strong>
 										</div>
 										<div class="col-md-12 col-sm-12 col-xs-12">';
                       if($loged){

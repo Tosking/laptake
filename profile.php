@@ -245,9 +245,6 @@
                                                 <div class="row for-small-screens_laptop">
                                                         <?php
                                                         $history = $pdo->query('SELECT * FROM renting WHERE user = '.$_COOKIE["id"].'');
-
-
-                                                        $history = $pdo->query('SELECT favorite FROM user WHERE id =' . $_COOKIE["id"] . '')->fetch(PDO::FETCH_OBJ)->favorite;
                                                         if ($history == NULL) {
                                                             echo '<div class="container mt-2 p-2 pt-2 text-center" style="background: #cccccc; border-radius:20px">
                                                             <div class="h1 m-5" style="color: #555555; font-size: clamp(10px, 5vw, 30px)">Здесь пока пусто,<br> сделай свой первый заказ!</p>

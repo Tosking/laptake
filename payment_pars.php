@@ -12,26 +12,26 @@
         if(isset($_POST["phone"])){
             $pdo->query('UPDATE user SET phone = "'.$_POST["phone"].'" WHERE id = '.$_COOKIE["id"]);
         }
-        $days_diff = (strtotime($end) - strtotime($start)) / 60 * 60 * 24;
+        $days_diff = (strtotime($end) - strtotime($start)) / (60 * 60 * 24);
         $balance = $pdo->query('SELECT balance FROM user WHERE id = '.$_COOKIE["id"])->fetch(PDO::FETCH_OBJ);
         $laptop = $pdo->query('SELECT * FROM laptop WHERE id = '.$_POST["laptop"])->fetch(PDO::FETCH_OBJ);
         $end_value = 0;
         if($days_diff == 1){
-            $end_value = $laptop->price / 30 * 6;
+            $end_value = ($laptop->price / 30) * 6 * $days_diff;
         }
         else if($days_diff == 2){
-            $end_value = $laptop->price / 30 * 4;
+            $end_value = ($laptop->price / 30) * 4 * $days_diff;
         }
         else if($days_diff <= 6){
-            $end_value = $laptop->price / 30 * 2;
+            $end_value = ($laptop->price / 30) * 2 * $days_diff;
         }
         else if($days_diff <= 30){
-            $end_value = $laptop->price / 30 * 1.5;
+            $end_value = ($laptop->price / 30) * 1.5 * $days_diff;
         }
         else {
-            $end_value = $laptop->price / 30;
+            $end_value = ($laptop->price / 30) * $days_diff;
         }
-        if($balance->balance < $end_value){
+        if(intval($balance->balance) < $end_value){
             header('Location: /');
         }
         else{
@@ -42,6 +42,8 @@
             $payment_id = $pdo->query('SELECT id FROM payments WHERE date = "'.$sGMTMySqlString.'"')->fetch(PDO::FETCH_OBJ);
             $pdo->query('INSERT INTO renting(user,copy,payment_id,start,end) VALUES ('.$_COOKIE["id"].','.$copy->id.','.$payment_id->id.',"'.$start.'","'.$end.'")');
             $pdo->query('UPDATE copy SET rent_ready = 0 WHERE id = '.$copy->id);
+            $pdo->query('UPDATE user SET balance = '.round(intval($balance->balance) - $end_value).' WHERE id = '.$_COOKIE["id"]);
+            echo $days_diff;
             header('Location: /profile.php#tab_03');
         }
     }
