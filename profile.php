@@ -218,8 +218,8 @@
                                                             $laptop = $pdo->query('SELECT * FROM laptop WHERE id = '.$favorite.'')->fetch(PDO::FETCH_OBJ);
                                                             echo '
                                                             <div class="container">
-                                                                <div class="row mt-1 p-3 text-center laptop" style="border-radius:20px; background-color: #cccccc">
-                                                                    <img src="'.$laptop->picture.'" style="width: 154px; height:154px;">
+                                                                <div class="row mt-1 p-3 text-center laptop" style="border-radius:20px; background-color: #cccccc;">
+                                                                    <img src="'.$laptop->picture.'" style="width: 154px; height:154px; object-fit:contain">
                                                                     <div class="col-sm-6 col-3">
                                                                         <div class="align-self-start" style="font-weight: 600">'.$laptop->name.'</div>
                                                                         <div class="row font-weight-normal">'.$laptop->description.'</div>
