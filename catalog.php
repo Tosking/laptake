@@ -120,14 +120,16 @@
 					$laptops = $pdo->query('SELECT * FROM laptop');
 				}
         $loged = FALSE;
+        $favorited = [];
         if(isset($_COOKIE["id"])){
           $loged = TRUE;
+          $favorited = json_decode($pdo->query('SELECT favorite FROM user WHERE id = '.$_COOKIE["id"])->fetch(PDO::FETCH_OBJ)->favorite);
         }
 				while($row = $laptops->fetch(PDO::FETCH_OBJ)){
 					echo '<div class="row">
 						<div class="col-12 block-rec laptop mb-3">
 								<div class="row lap-photo justify-content-center">
-									<img src="'.$row->picture.'" class="col-md-3 col-sm-3 col-xs-12 mobile-margin mh-photo" alt="laptop">
+									<img src="'.$row->picture.'" class="col-md-3 col-sm-3 col-xs-12 mobile-margin mh-photo" alt="laptop" style="object-fit:contain">
 									<div class="col-md-7 col-sm-7 col-xs-12 text-lg-start fs-4"><strong>'.$row->name.'</strong><br>'.$row->description.'</div>
 									<div class="col-md-2 col-sm-2 col-xs-12 main-text fs-4 d-flex align-content-center flex-wrap justify-content-center">
 										<div style="margin-bottom: 10px;" class="col-12">
@@ -140,7 +142,9 @@
                       else{
                       echo '<a href="/auth.php"><button class="btn fs-4 param"><strong>Заказать</strong></button></a>';
                       }
-											echo'<button class="btn fs-5 param" onclick="addtofav('.$row->id.')"><strong style="font-size:1rem;"  id="'.$row->id.'">В избранное</strong></button>
+											echo'<button class="btn fs-5 param" onclick="addtofav('.$row->id.')"><strong style="font-size:1rem;"  id="'.$row->id.'">';
+                      if(array_search($row->id, $favorited) !== FALSE) echo 'Из избранного'; else echo 'В избранное'; 
+                      echo'</strong></button>
 										</div>
 									</div>
 							</div>

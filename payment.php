@@ -82,6 +82,7 @@
     </nav> <!-- Navigtaion -->  
     <div class="container" style="margin-top: 200px">              
     <?php
+        if(isset($_GET["laptop"])){
         $time = time();
         $date = gmdate("Y-m-d", $time);
         $user = $pdo->query('SELECT * FROM user WHERE id = '.$_COOKIE["id"])->fetch(PDO::FETCH_OBJ);
@@ -91,11 +92,11 @@
         $laptop = $pdo->query('SELECT * FROM laptop WHERE id = '.$_GET["laptop"])->fetch(PDO::FETCH_OBJ);
         echo '
             <input value='.$laptop->price.' id="value" style="display: none;">
-            <div class="container overflow-hidden col-8">
+            <div class="container overflow-hidden col-10">
             <div class="row mt-3 mb-3 p-3 text-center laptop" style="border-radius:20px">
-            <div class="col">
-                <img src="'.$laptop->picture.'" style="width: 154px; height:154px;">
-                </div>
+            <div class="col-md-3 col-sm-3 col-xs-12">
+                <img src="'.$laptop->picture.'" style="object-fit:contain; width:100%;height:100%;">
+            </div>
                 <div class="col-sm-9">
                     <div class="align-self-start" style="font-weight: 600">'.$laptop->name.'</div>
                     <div class="row font-weight-normal m-1">'.$laptop->description.'</div>
@@ -138,6 +139,7 @@
                 </div>
             </div>
             </div>';
+            }
     ?>
     </div>
 
