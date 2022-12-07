@@ -4,3 +4,4 @@ php/db_credentials.json
 .htaccess
 .DS_Store
 php/.DS_Store
+.idea

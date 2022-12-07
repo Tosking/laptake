@@ -114,7 +114,7 @@
                 </div>
                 <div class="person_team col-lg-4">
                     <h2 class="team_name">Скорба Родион</h2>
-                    <h2 class="team_role">Team Lider</h2>
+                    <h2 class="team_role">TeamLead</h2>
                     <div class="person_photo"><img src="/assets/photo/родя.jpg" alt="#" width="390" height="580"></div>
                 </div>
                 <div class="person_team col-lg-4">
