@@ -87,9 +87,9 @@
 			<h1 class="title">Подбери свой ноутбук</h1>
 			<div class="main-buttons text-center">
 				<form method="get" action="/catalog.php">
-					<input type="submit" name="button" class="btn col-5 col-sm-3" value=Игровой style="font-weight:900;">
+					<input type="submit" name="button" class="btn col-5 col-sm-3" value='Все ноутбуки' style="font-weight:900;">
 					<input type="submit" name="button" class="btn col-5 col-sm-3" value=Офисный style="font-weight:900;">
-					<input type="submit" name="button" class="btn col-5 col-sm-3" value=Учебный style="font-weight:900;">
+					<input type="submit" name="button" class="btn col-5 col-sm-3" value=Игровой style="font-weight:900;">
 					<input type="submit" name="button" class="btn col-5 col-sm-3" value=Универсальный style="font-weight:900;">
 				</form>
   		</div>
@@ -112,8 +112,8 @@
 					if($_GET["button"] == "Универсальный"){
 						$laptops = $pdo->query('SELECT * FROM laptop WHERE type = "универсальный"');
 					}
-					if($_GET["button"] == "Учебный"){
-						$laptops = $pdo->query('SELECT * FROM laptop WHERE type = "учебный"');
+					if($_GET["button"] == "Все ноутбуки"){
+						$laptops = $pdo->query('SELECT * FROM laptop');
 					}
 				}
 				else{
