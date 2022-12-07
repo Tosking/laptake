@@ -100,8 +100,9 @@
   </div> <!--Container-->
 </div><!--Container-fluid promo_back-->
 
+
 <div class="container about_us">
-    <section class="row align-items-center">
+    <section class="row">
 
         <div class="col-md-12 col-sm-12 col-lg-6">
           <div class="block_about_us">
@@ -157,12 +158,15 @@
                 </div>
 
                 <div class="col-md-6 col-lg-9 col-sm-6 pt-2 pt-lg-1">
-                   <h4 class=" text_about_us_header"> Всегда на связи</h4>
+                   <h4 class="text_about_us_header"> Всегда на связи</h4>
                 <p class="text_about_us_paragraph"> Поможем в решении любых вопросов</p>
                </div>
                 </div> <!--Row-->
               </div> <!--about_us-->
               </div> <!--columns-md-12-->
+							<a class="zalupa" href="/catalog.php" >
+         <button type="button" class="btn btnpromo"><strong>Заказать в один клик</strong></button>
+        </a>
               
     </section>
   </div><!--Container about_us-->
